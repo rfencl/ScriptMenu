@@ -1,0 +1,24 @@
+#!/bin/bash
+[ ! ${MENUCFG_G} ] && MENUCFG_G='MENUCFG' || return 0
+
+. /home/powin/tools/shconfig/envDiscovery
+. /home/powin/tools/snippets/dialogs
+
+ARCHIVA_PROPS="tools/default.properties"
+
+if isSSH && ! isSimulated
+then
+   TOMCAT_PATH="/var/lib/tomcat8"
+   CATALINA_LOCALHOST="/etc/tomcat8/Catalina/localhost"
+   CATALINA_LOG_PATH="${TOMCAT_PATH}"
+else
+   TOMCAT_PATH="/opt/tomcat"
+   CATALINA_LOCALHOST="/opt/tomcat/conf/Catalina/localhost"
+   CATALINA_LOG_PATH="${TOMCAT_PATH}/logs"
+fi
+TURTLE_XML_PATH="${CATALINA_LOCALHOST}/turtle.xml"
+POWIN_PATH="/etc/powin"
+
+
+SOURCE_CODE_PATH="/home/powin/tools/regressionsource"
+

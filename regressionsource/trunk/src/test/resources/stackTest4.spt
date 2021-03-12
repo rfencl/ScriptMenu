@@ -1,0 +1,9 @@
+Using DirectP
+Full discharge at P/4
+Charge for 2h at P/4
+Rest 10s
+Record SOE value
+Turn off BMS
+Rest 10min
+Restart BMS
+Record SOE value

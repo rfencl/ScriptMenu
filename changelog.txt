@@ -1,0 +1,8 @@
+2021-02-28 v0.12
+1. fixed the current version display added -s flag to curl
+2. added a version number to the main display
+3. added this file
+4. added a readme
+
+2021-02-28 v0.13
+1. Added -n +F to all tail commands that use less

@@ -1,0 +1,9 @@
+. tools/shconfig/menucfg
+sudo service tomcat stop
+sleep 10
+sudo rm -f $CATALINA_LOG_PATH/catalina.out
+ls -l $CATALINA_LOG_PATH/catalina.out
+echo $(sudo grep 'Catalina.start Server startup in' $CATALINA_LOG_PATH/catalina.out)
+unset GENERALFUNCTIONS_G
+. tools/snippets/generalFunctions
+sudo service tomcat start ; waitTomcatStart

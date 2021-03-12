@@ -1,0 +1,6 @@
+
+body {
+	width: auto;
+	background-color: gray;
+}
+

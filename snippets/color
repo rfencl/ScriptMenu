@@ -1,0 +1,26 @@
+#!/bin/bash
+[ ! ${COLOR_G} ] && COLOR_G='COLOR' || return 0
+
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+BLUE="\e[34m"
+MAGENTA="\e[35m"
+CYAN="\e[36m"
+LTGRAY="\e[37m"
+DKGRAY="\e[90m"
+LTRED="\e[91m"
+LTGREEN="\e[92m"
+LTYELLOW="\e[93m"
+LTBLUE="\e[94m"
+LTMAGENTA="\e[95m"
+LTCYAN="\e[96m"
+WHITE="\e[97m"
+RESET="\e[0m"
+BOLD="\e[1m"
+
+
+BKBLACK="\e[0;40m"
+BKRED="\e[0;41m"
+BKGREEN="\e[0;42m"
+BKBROWN="\e[0;43m"

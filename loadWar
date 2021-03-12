@@ -1,0 +1,38 @@
+#!/bin/bash
+
+[ ! ${LOADWAR_G} ] && LOADWAR_G=LOADWAR || return 0
+
+. /home/powin/tools/snippets/color
+. /home/powin/tools/snippets/cursor
+. /home/powin/tools/shconfig/menucfg
+. /home/powin/tools/snippets/generalFunctions
+
+loadWar () {
+    getAppVersions
+    [ ! $KOBOLD_VERSION ] && { cntr ; echo -e $RED Version is not set! List app versions to set. $RESET; return 1 ; }
+    
+    echo ""
+    cntr ; echo You are going to download:
+    displayAppVersions $TURTLE_VERSION $KOBOLD_VERSION $KNOCKER_VERSION $COB_VERSION $PRIMROSE_VERSION
+    echo ""
+    cntr ; read -rsn1 -p "Hit enter to download war files. Any other key to exit" EXECUTE
+    if [[ $EXECUTE = "" ]] ; 
+    then
+        checkArchivaCredentials
+        cntr ; echo -e "\nRemoving war files from directory."
+        sudo rm -f *.war
+        APP_NAMES=($KOBOLD $COBLYNAU $PRIMROSE $KNOCKER $TURTLE)
+        APP_VERSIONS=($KOBOLD_VERSION $COB_VERSION $PRIMROSE_VERSION $KNOCKER_VERSION $TURTLE_VERSION)
+        for (( i=0; i<${#APP_NAMES[@]}; i=i+1 )) ; do
+            APP_NAME="${APP_NAMES[i]}"
+            APP_VERSION=${APP_VERSIONS[i]}
+            cntr ; echo "Downloading $APP_NAME: $APP_VERSION"
+            wget --user=${archiva_user} --password ${archiva_password} https://archiva.powindev.com/repository/internal/com/powin/${APP_NAME}/${APP_VERSION}/${APP_NAME}-${APP_VERSION}.war -O ${APP_NAME}-${APP_VERSION}.war | grep '%' #&> /tmp/nul
+        done
+        cntr ; echo "Download Complete"
+    fi
+
+}
+
+
+

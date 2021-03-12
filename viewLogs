@@ -1,0 +1,45 @@
+#!/bin/bash
+[ ! ${VIEWLOGS_G} ] && VIEWLOGS_G='VIEWLOGS' || return 0
+
+. /home/powin/tools/snippets/color
+. /home/powin/tools/snippets/cursor
+. /home/powin/tools/shconfig/menucfg
+. /home/powin/tools/snippets/generalFunctions
+
+#-----------------------------------------------------------------------------------------------
+# TODO: Allow a choice of viewer
+#-----------------------------------------------------------------------------------------------
+function viewLog {
+  local files="$@"
+  local parmcnt=$#
+  if [[ $parmcnt -gt 1 ]]; then
+   local command="sudo less $1 $2 $3 $4 $5"
+  else
+    command="sudo less $1"
+  fi
+  $command
+}
+
+#-----------------------------------------------------------------------------------------------
+# Dynamically Build the list log files menu based on the system.
+#-----------------------------------------------------------------------------------------------
+function doViewLogs {
+ 
+  local menuItems=()
+  local functions=()
+  local filter=(turtle.log coblynau.log knocker.log primrose.log kobold.log)
+  if [[ ! -z "${TOMCAT_LOG_DIR}" ]]; then
+    for i in ${filter[@]}; do
+      if [ -e "${TOMCAT_LOG_DIR}$i" ]; 
+      then
+        menuItems=("${menuItems[@]}" $i)
+        functions=("${functions[@]}" "(viewLog ${TOMCAT_LOG_DIR}$i)" )
+      fi
+    done
+  fi
+ if [[ 0 -eq "${#menuItems[@]}" ]]; then  
+     showInfoDialog "There are no log files on this system to view." "No Files Found"
+  else
+    genMenu "View Logs" "${menuItems[@]}" "${functions[@]}"
+  fi
+}

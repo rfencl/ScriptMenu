@@ -1,0 +1,41 @@
+#!/bin/bash
+[ ! ${DEPLOYWAR_G} ] && DEPLOYWAR_G=DEPLOYWAR || return 0
+
+. /home/powin/tools/snippets/color
+. /home/powin/tools/snippets/cursor
+. /home/powin/tools/shconfig/menucfg
+. /home/powin/tools/snippets/generalFunctions
+
+deployWar () {
+    getAppVersions
+    cd $HOMEDIR
+    cntr ; read -rsn1 -p "Hit enter to deploy war files. Any other key to exit" EXECUTE
+    if [[ $EXECUTE = "" ]] ; 
+    then
+    cntr ; echo -e "\nHalting Tomcat, Moving apps into place, Restarting Tomcat."
+        cntr ; sudo /bin/systemctl stop tomcat.service ; sleep 20 ; waitTomcatStop
+         
+        # remove current apps from tomcat
+        for app in kobold coblynau primrose knocker turtle; do
+          sudo rm -rf /opt/tomcat/webapps/${app}* && { cntr; echo removed $app; } || { cntr; echo error removing $app; }
+        done
+        ls -l /opt/tomcat/webapps
+        echo
+        sudo mv $HOMEDIR/kobold-${KOBOLD_VERSION}.war /opt/tomcat/webapps/kobold.war        && { cntr; echo kobold moved; }
+        sudo mv $HOMEDIR/coblynau-${COB_VERSION}.war /opt/tomcat/webapps/coblynau.war       && { cntr; echo coblynau moved; }
+        sudo mv $HOMEDIR/primrose-${PRIMROSE_VERSION}.war /opt/tomcat/webapps/primrose.war  && { cntr; echo primrose moved; }
+        sudo mv $HOMEDIR/knocker-${KNOCKER_VERSION}.war /opt/tomcat/webapps/knocker.war     && { cntr; echo knocker moved; }
+        sudo mv $HOMEDIR/turtle-${TURTLE_VERSION}.war /opt/tomcat/webapps/turtle.war        && { cntr; echo turtle moved; }
+
+        ls -l /opt/tomcat/webapps
+        echo
+       
+        sudo chown tomcat:tomcat /opt/tomcat/webapps/*.war
+ 
+        cntr; echo starting tomcat
+
+        sudo /bin/systemctl start tomcat.service
+        waitTomcatStart
+    fi
+}
+

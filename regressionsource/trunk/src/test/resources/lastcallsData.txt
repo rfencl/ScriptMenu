@@ -1,0 +1,2545 @@
+requestId: 19359
+requestTimestamp: 1614663665286
+blockReport {
+  timeStamp: 1614663665286
+  stationCode: "QASTACKE230E"
+  blockIndex: 1
+  arrayReport {
+    key: 1
+    value {
+      arrayIndex: 1
+      timeStamp: 1614663663328
+      arrayData {
+        connectedSOC {
+          stackCount: 1
+          kWh: 9.2
+          kWhCapacity: 230.0
+          soc: 4.0
+          dod: 96.0
+          Ah: 150.0
+          AhCapacity: 280.0
+        }
+        connectedClippedSOC {
+          stackCount: 1
+          kWh: 9.2
+          kWhCapacity: 230.0
+          soc: 4.0
+          dod: 96.0
+          Ah: 150.0
+          AhCapacity: 280.0
+        }
+        notConnectedSOC {
+        }
+        notConnectedClippedSOC {
+        }
+        dcBusVoltage: 814
+        communicatingStackCount: 1
+        maxAllowedChargeCurrent: 110
+        maxAllowedDischargeCurrent: 110
+        connectedStackMinCellVoltage: 3065
+        connectedStackMaxCellVoltage: 3086
+        connectedStackAvgCellVoltage: 3078
+      }
+      stringReport {
+        key: 1
+        value {
+          timeStamp: 1614663663328
+          arrayIndex: 1
+          stringIndex: 1
+          stringData {
+            ah: 150.0
+            kWh: 9.2
+            soc: 4
+            calculatedStringVoltage: 812
+            measuredStringVoltage: 815
+            dcBusVoltage: 814
+            contactorsCloseExpected: true
+            positiveContactorClosed: true
+            negativeContactorClosed: true
+            recloseCount: 3
+            hasPreciseCalculatedStringVoltage: true
+            preciseCalculatedStringVoltage: 812.676
+            notificationReport {
+            }
+            hasCellGroupStats: true
+            maxCellGroupTemp: 260
+            minCellGroupTemp: 240
+            avgCellGroupTemp: 248
+            maxCellGroupVoltage: 3086
+            minCellGroupVoltage: 3065
+            avgCellGroupVoltage: 3078
+            usedStringVoltage: 812
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3069
+                voltageMax: 3071
+                voltageLatest: 3070
+                tempLatest: 260
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3068
+                voltageLatest: 3069
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3066
+                voltageMax: 3069
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3065
+                voltageLatest: 3066
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3079
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3071
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3079
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3078
+                voltageLatest: 3077
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3069
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3075
+                voltageLatest: 3074
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3069
+                voltageLatest: 3070
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3073
+                voltageLatest: 3071
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3084
+                voltageLatest: 3085
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3086
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3086
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3075
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3069
+                voltageLatest: 3067
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3076
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3075
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3066
+                voltageMax: 3068
+                voltageLatest: 3067
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3065
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3068
+                voltageLatest: 3066
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3069
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageMax: 3083
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3078
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3072
+                voltageLatest: 3070
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3069
+                voltageMax: 3072
+                voltageLatest: 3071
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3078
+                voltageLatest: 3077
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3076
+                voltageLatest: 3075
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3072
+                voltageLatest: 3071
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3078
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3069
+                voltageMax: 3072
+                voltageLatest: 3071
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3084
+                voltageMax: 3086
+                voltageLatest: 3085
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3087
+                voltageLatest: 3086
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3086
+                voltageLatest: 3084
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageMax: 3083
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3078
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3084
+                voltageLatest: 3085
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3069
+                voltageLatest: 3067
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3066
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3071
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3068
+                voltageLatest: 3070
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3069
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3071
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3078
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3078
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3079
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3076
+                voltageLatest: 3075
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3078
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3071
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3073
+                voltageLatest: 3072
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3071
+                voltageLatest: 3070
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3072
+                voltageLatest: 3071
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3069
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3073
+                voltageLatest: 3072
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3080
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3078
+                voltageLatest: 3079
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3078
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3066
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3073
+                voltageLatest: 3071
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3072
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3075
+                voltageLatest: 3074
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3076
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3075
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3086
+                voltageLatest: 3084
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3084
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3086
+                voltageLatest: 3083
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3076
+                voltageLatest: 3078
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3069
+                voltageLatest: 3071
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3071
+                voltageLatest: 3069
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3068
+                voltageLatest: 3067
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3076
+                voltageLatest: 3075
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3069
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3078
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3079
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3078
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageLatest: 3083
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3084
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3072
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3084
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3069
+                voltageLatest: 3068
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3069
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3071
+                voltageLatest: 3069
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3083
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3082
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3076
+                voltageLatest: 3075
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3083
+                voltageLatest: 3084
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3083
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3086
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3075
+                voltageLatest: 3074
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3065
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3066
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3073
+                voltageLatest: 3072
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3073
+                voltageLatest: 3072
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3076
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3079
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3076
+                voltageLatest: 3077
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3077
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3079
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3076
+                tempLatest: 250
+              }
+            }
+          }
+          batteryPackReportList {
+            timeStamp: 1614663663328
+            batteryPackData {
+              batteryPackBalancingConfiguration {
+                chargeBalancingPermitted: true
+                dischargeBalancingPermitted: true
+              }
+              balancingState: BALANCING_OFF
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3075
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3076
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3075
+                voltageLatest: 3074
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3075
+                voltageLatest: 3073
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3069
+                voltageLatest: 3068
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3071
+                voltageLatest: 3070
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3078
+                voltageLatest: 3077
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3080
+                voltageLatest: 3079
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3081
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3083
+                voltageLatest: 3080
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3078
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3082
+                voltageLatest: 3081
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3076
+                voltageLatest: 3077
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3082
+                tempLatest: 240
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMax: 3084
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+            cellGroupReportList {
+              cellGroupData {
+                voltageMin: 3080
+                voltageLatest: 3082
+                tempLatest: 250
+              }
+            }
+          }
+          scFirmwareVersion {
+            firmwareType: SC_FIRMWARE
+            fwVersionMajor: 4
+            fwVersionMinor: 1
+            fwVersionRevision: 28
+          }
+          scHardwareVersion {
+            firmwareType: SC_FIRMWARE
+            fwVersionMajor: 3
+            fwVersionMinor: 21
+          }
+          stackType: STACK_230_GEN22
+        }
+      }
+      arrayPcsReport {
+        key: 1
+        value {
+          timeStamp: 1614663665179
+          arrayPcsData {
+            state: "Ready"
+            dcVoltageVolt: 5
+            acFrequencyHz: 60.0
+            arrayPcsPhaseData {
+              arrayPcsPhase: PHASE_A
+              arrayPcsPhaseVoltageMeasuremeantType: TO_NEUTRAL
+              acVoltageVolt: 282
+            }
+            arrayPcsPhaseData {
+              arrayPcsPhase: PHASE_A
+              arrayPcsPhaseVoltageMeasuremeantType: TO_PHASE_B
+              acVoltageVolt: 484
+            }
+            arrayPcsPhaseData {
+              arrayPcsPhase: PHASE_C
+              arrayPcsPhaseVoltageMeasuremeantType: TO_NEUTRAL
+              acVoltageVolt: 282
+            }
+            arrayPcsPhaseData {
+              arrayPcsPhase: PHASE_B
+              arrayPcsPhaseVoltageMeasuremeantType: TO_PHASE_C
+              acVoltageVolt: 486
+            }
+            arrayPcsPhaseData {
+              arrayPcsPhase: PHASE_B
+              arrayPcsPhaseVoltageMeasuremeantType: TO_NEUTRAL
+              acVoltageVolt: 278
+            }
+            arrayPcsPhaseData {
+              arrayPcsPhase: PHASE_C
+              arrayPcsPhaseVoltageMeasuremeantType: TO_PHASE_A
+              acVoltageVolt: 488
+            }
+          }
+        }
+      }
+    }
+  }
+  dcBatteryReport {
+    key: 1
+    value {
+      arrayIndex: 1
+      timeStamp: 1614663665179
+      dcBatteryData {
+        ah: 280
+        kWh {
+          all: 9
+          online: 9
+        }
+        voltage: 814
+        cellVoltage {
+          all {
+            min: 3065
+            max: 3086
+            average: 3078
+          }
+          offline {
+          }
+          online {
+            min: 3065
+            max: 3086
+            average: 3078
+          }
+        }
+        cellTemperature {
+          all {
+            min: 24.0
+            max: 26.0
+            average: 24.821969696969695
+          }
+          offline {
+          }
+          online {
+            min: 24.0
+            max: 26.0
+            average: 24.821969696969695
+          }
+        }
+        socData {
+          onlineAvailableKWh: 9.199999809265137
+          onlineCapacityKWh: 230.0
+          maxChargePowerKW: 89.54
+          maxDischargePowerKW: 89.54
+          onlineSOC: 0.039999999170718
+          onlineStackCount: 1
+        }
+      }
+    }
+  }
+  blockMeterReport {
+    key: 2
+    value {
+      timeStamp: 1614663665179
+      blockMeterData {
+      }
+    }
+  }
+  blockMeterReport {
+    key: 1
+    value {
+      timeStamp: 1614663665179
+      blockMeterData {
+        realPowerKW: 10.0
+        apparentPowerKVA: 14.142135623730951
+        reactivePowerKVAR: 10.0
+        frequencyHz: 60.1
+        blockMeterPhaseDataPhaseA {
+          voltageVoltToNextPhase: 480.0
+          voltageVoltToNeutral: 277.0
+        }
+        blockMeterPhaseDataPhaseB {
+          voltageVoltToNextPhase: 480.0
+          voltageVoltToNeutral: 277.0
+        }
+        blockMeterPhaseDataPhaseC {
+          voltageVoltToNextPhase: 480.0
+          voltageVoltToNeutral: 277.0
+        }
+        blockMeterRole: POI
+      }
+    }
+  }
+  blockMeterReport {
+    key: 3
+    value {
+      timeStamp: 1614663665179
+      blockMeterData {
+      }
+    }
+  }
+  acBatteryReport {
+    key: 1
+    value {
+      arrayIndex: 1
+      timeStamp: 1614663665180
+      acBatteryData {
+        availableACChargekW: 93.271
+        availableACDischargekW: 85.9584
+      }
+    }
+  }
+  bessStatusCode {
+    bessStatusCode: 12004
+    extendedInfo: 1.0
+    startTimestamp: 1614662184031
+  }
+  bessStatusCode {
+    bessStatusCode: 11004
+    extendedInfo: 1.0
+    startTimestamp: 1614662184031
+  }
+  controllerStatisticsReport {
+    timeStamp: 1614663665286
+    controllerStatisticsData {
+      turtleVersion {
+        firmwareType: TURTLE_FIRMWARE
+        fwVersionMajor: 2
+        fwVersionMinor: 26
+        fwVersionRevision: 60
+      }
+      totalHardDriveSpaceBytes: 7098863616
+      freeHardDriveSpaceBytes: 1614495744
+      usableHardDriveSpaceBytes: 1233707008
+      jvmTotalMemoryBytes: 100540416
+      jvmAvailablMemoryBytes: 38251104
+      jvmMaxMemoryBytes: 1056309248
+      systemTotalMemoryBytes: 1860108000
+      systemAvailableMemoryBytes: 1105968000
+      systemFreeMemoryBytes: 575384000
+      swapTotalMemoryBytes: 1220604000
+      swapFreeMemoryBytes: 1213692000
+      availableProcessors: 2
+      runningProcesses: 1
+      totalProcesses: 235
+      loadAverageOneMinute: 0.09
+      loadAverageFiveMinutes: 0.13
+      loadAverageFifteenMinutes: 0.16
+      processorUpTimeSecond: 5473934.07
+    }
+  }
+  configReport {
+    key: 1
+    value {
+      stringConfigData {
+        key: 1
+        value {
+          stackDefinitionName: "S22-230-140-1000-C280-110-derate01"
+          batteryPackConfigurationCellGroupCount: 24
+          cellGroupConfigurationMaxCellVoltage: 3625
+          cellGroupConfigurationMinCellVoltage: 2525
+          cellGroupConfigurationNominalCellVoltage: 3200
+          ampHourCapacity: 280
+          batteryPackCount: 11
+          maxAmpCharge: 110
+          maxAmpDischarge: 110
+          wattHourCapacity: 230000
+          maxWattCharge: 76666
+          maxWattDischarge: 76666
+          stringSocOperatingRangeTop: 100
+          stringVoltageOperatingRangeBottom: 760
+          stringVoltageOperatingRangeTop: 937
+          useOkikuForEnergy: true
+          batteryIdentifier: "catl-280Ah"
+          derateByCellVoltage: true
+          dischargeDerateByVoltage01EnterMillivolts: 2600
+          dischargeDerateByVoltage01ExitMillivolts: 2700
+          dischargeDerateByVoltage01ExitMilliseconds: 60000
+          dischargeDerateByVoltage01Derate: 1.0
+          chargeDerateByVoltage01EnterMillivolts: 3400
+          chargeDerateByVoltage01ExitMillivolts: 3360
+          chargeDerateByVoltage01ExitMilliseconds: 60000
+          chargeDerateByVoltage01Derate: 0.66
+          chargeDerateByVoltage02EnterMillivolts: 3410
+          chargeDerateByVoltage02ExitMillivolts: 3370
+          chargeDerateByVoltage02ExitMilliseconds: 80000
+          chargeDerateByVoltage02Derate: 0.33
+          chargeDerateByVoltage03EnterMillivolts: 3420
+          chargeDerateByVoltage03ExitMillivolts: 3380
+          chargeDerateByVoltage03ExitMilliseconds: 100000
+          chargeDerateByVoltage03Derate: 0.17
+          chargeDerateByVoltage04EnterMillivolts: 3430
+          chargeDerateByVoltage04ExitMillivolts: 3390
+          chargeDerateByVoltage04ExitMilliseconds: 120000
+          chargeDerateByVoltage04Derate: 0.08
+          chargeDerateByVoltage05EnterMillivolts: 3440
+          chargeDerateByVoltage05ExitMillivolts: 3410
+          chargeDerateByVoltage05ExitMilliseconds: 140000
+          chargeDerateByVoltage05Derate: 0.04
+          bpcBalancingHighVoltageLimit: 3650
+          bpcBalancingLowVoltageLimit: 2400
+          bpcBalancingHighTempLimit: 45.0
+          bpcBalancingLowTempLimit: 5.0
+          bpcBalancingVoltageDeltaLimit: 1250
+          highCellGroupTemperatureAlarmEnabled: true
+          highCellGroupTemperatureAlarmSet: 45.0
+          highCellGroupTemperatureAlarmClear: 43.0
+          lowCellGroupTemperatureAlarmEnabled: true
+          lowCellGroupTemperatureAlarmSet: 10.0
+          lowCellGroupTemperatureAlarmClear: 12.0
+          highCellGroupTemperatureWarningEnabled: true
+          highCellGroupTemperatureWarningSet: 40.0
+          highCellGroupTemperatureWarningClear: 38.0
+          lowCellGroupTemperatureWarningEnabled: true
+          lowCellGroupTemperatureWarningSet: 15.0
+          lowCellGroupTemperatureWarningClear: 17.0
+          highCellGroupTemperatureWarrantyAlarmSet: 5.0
+          highCellGroupTemperatureWarrantyAlarmClear: 6.0
+          lowCellGroupTemperatureWarrantyAlarmSet: 13.0
+          lowCellGroupTemperatureWarrantyAlarmClear: 14.0
+          highCellGroupTemperatureWarrantyWarningClear: 8.0
+          lowCellGroupTemperatureWarrantyWarningSet: 15.0
+          lowCellGroupTemperatureWarrantyWarningClear: 16.0
+          highCellGroupTemperatureDeltaAlarmSet: 17.0
+          highCellGroupTemperatureDeltaAlarmClear: 18.0
+          highCellGroupTemperatureDeltaWarningSet: 19.0
+          highCellGroupTemperatureDeltaWarningClear: 20.0
+          highCellGroupVoltageAlarmEnabled: true
+          highCellGroupVoltageAlarmSet: 3650
+          highCellGroupVoltageAlarmClear: 3550
+          lowCellGroupVoltageAlarmEnabled: true
+          lowCellGroupVoltageAlarmSet: 2500
+          lowCellGroupVoltageAlarmClear: 2750
+          highCellGroupVoltageWarningEnabled: true
+          highCellGroupVoltageWarningSet: 3550
+          highCellGroupVoltageWarningClear: 3375
+          lowCellGroupVoltageWarningEnabled: true
+          lowCellGroupVoltageWarningSet: 2750
+          lowCellGroupVoltageWarningClear: 3050
+          highCellGroupVoltageWarrantyAlarmSet: 5
+          highCellGroupVoltageWarrantyAlarmClear: 6
+          lowCellGroupVoltageWarrantyAlarmSet: 13
+          lowCellGroupVoltageWarrantyAlarmClear: 14
+          highCellGroupVoltageWarrantyWarningSet: 7
+          highCellGroupVoltageWarrantyWarningClear: 8
+          lowCellGroupVoltageWarrantyWarningSet: 15
+          lowCellGroupVoltageWarrantyWarningClear: 16
+          highCellGroupVoltageDeltaAlarmEnabled: true
+          highCellGroupVoltageDeltaAlarmSet: 1000
+          highCellGroupVoltageDeltaAlarmClear: 800
+          highCellGroupVoltageDeltaWarningEnabled: true
+          highCellGroupVoltageDeltaWarningSet: 800
+          highCellGroupVoltageDeltaWarningClear: 600
+          highTemperatureWarnTriggerSet: 42.0
+          lowTemperatureWarnTriggerSet: 9.0
+          inverterChargeHighVoltageLimit: 963
+          inverterDischargeHighVoltageLimit: 963
+          inverterOperationHighVoltageLimit: 963
+          inverterChargeLowVoltageLimit: 660
+          inverterDischargeLowVoltageLimit: 660
+          inverterOperationLowVoltageLimit: 660
+          inverterChargeHighTempLimit: 45.0
+          inverterDischargeHighTempLimit: 45.0
+          inverterOperationHighTempLimit: 45.0
+          inverterChargeLowTempLimit: 5.0
+          inverterDischargeLowTempLimit: 5.0
+          inverterOperationLowTempLimit: 5.0
+          inverterChargeVoltageDeltaLimit: 10000
+          inverterDischargeVoltageDeltaLimit: 10000
+          inverterOperationVoltageDeltaLimit: 10000
+          inverterVoltageLimitRecoveryHysteresis: 20
+          inverterFailureRecoveryTimeMilliseconds: 30000
+          stringContactorStackBusVoltageDeltaLimit: 10
+          highStringChargeRateAlarmEnabled: true
+          highStringChargeRateAlarmSet: 140.0
+          highStringChargeRateAlarmClear: 120.0
+          highStringDischargeRateAlarmEnabled: true
+          highStringDischargeRateAlarmSet: 140.0
+          highStringDischargeRateAlarmClear: 120.0
+          highStringChargeRateWarningEnabled: true
+          highStringChargeRateWarningSet: 120.0
+          highStringChargeRateWarningClear: 100.0
+          highStringDischargeRateWarningEnabled: true
+          highStringDischargeRateWarningSet: 120.0
+          highStringDischargeRateWarningClear: 100.0
+          highStringVoltageAlarmEnabled: true
+          highStringVoltageAlarmSet: 953
+          highStringVoltageAlarmClear: 943
+          lowStringVoltageAlarmEnabled: true
+          lowStringVoltageAlarmSet: 670
+          lowStringVoltageAlarmClear: 680
+          highStringVoltageWarningEnabled: true
+          highStringVoltageWarningSet: 943
+          highStringVoltageWarningClear: 933
+          lowStringVoltageWarningEnabled: true
+          lowStringVoltageWarningSet: 680
+          lowStringVoltageWarningClear: 690
+          highBatteryPackVoltageDeltaAlarmEnabled: true
+          highBatteryPackVoltageDeltaAlarmSet: 12650
+          highBatteryPackVoltageDeltaAlarmClear: 9650
+          highBatteryPackVoltageDeltaWarningEnabled: true
+          highBatteryPackVoltageDeltaWarningSet: 9650
+          highBatteryPackVoltageDeltaWarningClear: 6650
+          dischargeDerateByTemperature01EnterCelcius: 26.0
+          dischargeDerateByTemperature01ExitCelcius: 27.0
+          dischargeDerateByTemperature01ExitMilliseconds: 60000
+          dischargeDerateByTemperature01Derate: 0.05
+          chargeDerateByTemperature01EnterCelcius: 35.0
+          chargeDerateByTemperature01ExitCelcius: 33.5
+          chargeDerateByTemperature01ExitMilliseconds: 60000
+          chargeDerateByTemperature01Derate: 0.05
+        }
+      }
+    }
+  }
+}
+notificationReport {
+  notification {
+    notificationType {
+      notificationCategory: ALARM
+      notificationId: 1563
+    }
+    notificationSource {
+      endpointType: BLOCK_METER
+      stationCode: "QASTACKE230E"
+      blockIndex: 1
+      blockMeterIndex: 3
+    }
+    timestamp: 1614644366429
+  }
+  notification {
+    notificationType {
+      notificationCategory: ALARM
+      notificationId: 1563
+    }
+    notificationSource {
+      endpointType: BLOCK_METER
+      stationCode: "QASTACKE230E"
+      blockIndex: 1
+      blockMeterIndex: 2
+    }
+    timestamp: 1614644366430
+  }
+}
+dragonAppReport {
+  timestamp: 1614663665286
+  dragonAppData {
+    dragonAppSlotData {
+      appCode: "ES00001"
+      configName: "default"
+      enabled: true
+      health: HEALTH_HEALTHY
+      appStatus: "No trips"
+    }
+    dragonAppSlotData {
+      appCode: "BSF0001"
+      priority: 1
+      configName: "default"
+      enabled: true
+      health: HEALTH_HEALTHY
+      appStatus: "ACBattery QASTACKE230E:1:1 - \r\nOPS-BLOCKED<br/>"
+    }
+    dragonAppSlotData {
+      appCode: "ErcotFFR"
+      priority: 2
+      configName: "default"
+      appStatus: "Unknown"
+    }
+    dragonAppSlotData {
+      appCode: "FC00002"
+      priority: 100
+      configName: "default"
+    }
+    dragonAppSlotData {
+      appCode: "PC00001"
+      priority: 4
+      configName: "instant"
+      appStatus: "Real Power: 10 kW\r\nReactive Power: 0 kVar\r\nGrid Mode: GRID_FOLLOWING"
+    }
+    dragonAppSlotData {
+      appCode: "FD00001"
+      priority: 101
+      configName: "default"
+      appStatus: "Disabled. (Mode = Droop)  - No frequency received"
+    }
+    dragonAppSlotData {
+      appCode: "SSPC001"
+      priority: 5
+      configName: "default"
+      appStatus: "Error - No recent power command received"
+    }
+    dragonAppSlotData {
+      appCode: "SLOW001"
+      priority: 6
+      configName: "default"
+      appStatus: "Disabled."
+    }
+    dragonAppSlotData {
+      appCode: "SCHED001"
+      priority: 70
+      configName: "default"
+      appStatus: "Disabled"
+    }
+    dragonAppSlotData {
+      appCode: "FC00000"
+      priority: 103
+      configName: "default"
+      enabled: true
+      health: HEALTH_HEALTHY
+      appStatus: "Fans always on"
+    }
+    dragonAppSlotData {
+      appCode: "DMG00001"
+      priority: 40
+      configName: "default"
+      appStatus: "Disabled"
+    }
+    dragonAppSlotData {
+      appCode: "DMG00001"
+      priority: 41
+      configName: "default1"
+      appStatus: "Disabled"
+    }
+    dragonAppSlotData {
+      appCode: "PCUR001"
+      priority: 10
+      configName: "default"
+      appStatus: "Limits : Charge : 50.0 kW Discharge : 10.0 kW"
+    }
+    dragonAppSlotData {
+      appCode: "BOP0001"
+      priority: 11
+      configName: "by_simple_modbus"
+      appStatus: "Disabled"
+    }
+    dragonAppSlotData {
+      appCode: "GPA0001"
+      priority: 300
+      configName: "default"
+      appStatus: "Disabled."
+    }
+    dragonAppSlotData {
+      appCode: "OPE0001"
+      priority: 45
+      configName: "default"
+      appStatus: "Optimal energy will run from start time: 20/09/11 16:00 to end time: 21/01/12 17:00 with Priority :Power at Power :5200.0kW currently Disabled"
+    }
+    dragonAppSlotData {
+      appCode: "FCR0001"
+      priority: 46
+      configName: "default"
+      appStatus: "Disabled"
+    }
+    dragonAppSlotData {
+      appCode: "BS00001"
+      priority: 9999
+      configName: "default"
+      enabled: true
+      health: HEALTH_HEALTHY
+      appStatus: "---"
+    }
+    dragonAppSlotData {
+      appCode: "SCHED001"
+      priority: 80
+      configName: "default"
+      appStatus: "Disabled"
+    }
+    dragonAppSlotData {
+      appCode: "PVC00001"
+      priority: 50
+      configName: "instant"
+    }
+    dragonAppSlotData {
+      appCode: "SCHED001"
+      priority: 60
+      configName: "default"
+      appStatus: "Disabled"
+    }
+  }
+}
+topologyReport {
+  timeStamp: 1614663665180
+  topologyNodes {
+    entityKey: "MK-ST:QASTACKE230E-B:1-M:2"
+    enabled: true
+    entityType: "BlockMeter"
+    entitySubType: "Accuenergy Acuvim II"
+    statusMessage: "Not Ready;MeterRole:(UNKNOWN)"
+  }
+  topologyNodes {
+    entityKey: "AK-ST:QASTACKE230E-B:1-A:1"
+    enabled: true
+    ready: true
+    entityType: "Battery"
+    entitySubType: "PhoenixDcBattery"
+    communicating: true
+    statusMessage: "Ready"
+  }
+  topologyNodes {
+    entityKey: "MK-ST:QASTACKE230E-B:1-M:1"
+    enabled: true
+    ready: true
+    entityType: "BlockMeter"
+    entitySubType: "CleanPeakSimulator"
+    communicating: true
+    statusMessage: "Ready;MeterRole:(POI)"
+  }
+  topologyNodes {
+    entityKey: "ACBK-ST:QASTACKE230E-B:1-A:1"
+    enabled: true
+    ready: true
+    entityType: "ACBattery"
+    entitySubType: "AcBattery"
+    communicating: true
+    statusMessage: "Ready"
+    allowFaultReset: true
+    childEntityKeys: "AK-ST:QASTACKE230E-B:1-A:1"
+    childEntityKeys: "APK-ST:QASTACKE230E-B:1-A:1-AP:1"
+  }
+  topologyNodes {
+    entityKey: "APK-ST:QASTACKE230E-B:1-A:1-AP:1"
+    enabled: true
+    ready: true
+    entityType: "PCS"
+    entitySubType: "EpcPcs"
+    communicating: true
+    statusMessage: "Operating. EPCOPS = \"Ready\"."
+  }
+  topologyNodes {
+    entityKey: "MK-ST:QASTACKE230E-B:1-M:3"
+    enabled: true
+    entityType: "BlockMeter"
+    entitySubType: "Accuenergy AcuDC 240"
+    statusMessage: "Not Ready;MeterRole:(UNKNOWN)"
+  }
+  topologyNodes {
+    entityKey: "BK-ST:QASTACKE230E-B:1"
+    enabled: true
+    ready: true
+    entityType: "AcBatteryBlock"
+    communicating: true
+    statusMessage: "Ready"
+    childEntityKeys: "ACBK-ST:QASTACKE230E-B:1-A:1"
+  }
+}
+willHaveCellGroupSummaryReport: true

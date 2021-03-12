@@ -1,0 +1,28 @@
+<html	xmlns:jsp="http://java.sun.com/JSP/Page"
+		xmlns:c="http://java.sun.com/jsp/jstl/core"
+		xmlns:spring="http://www.springframework.org/tags"
+ >
+
+<jsp:directive.page contentType="text/html; charset=UTF-8" />
+<head>
+	<title>Page Title</title>
+	<spring:url var="hrefurl" value="/static/css/sunspectests-main.css" />
+	<link href="${hrefurl}" rel="stylesheet" />
+	
+    <spring:url var="url" value="/static/js/sunspectests-main.js" htmlEscape="true" />
+    <script src="${url}">&amp;nbsp;</script>
+    
+    <spring:url var="url" value="/static/js/jquery-3.2.1.min.js" htmlEscape="true" />
+    <script src="${url}">&amp;nbsp;</script>
+
+</head>
+<body>
+	Body!
+</body>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    powin.sunspectests.init("${pageContext.request.contextPath}");
+});
+</script>                
+</html>

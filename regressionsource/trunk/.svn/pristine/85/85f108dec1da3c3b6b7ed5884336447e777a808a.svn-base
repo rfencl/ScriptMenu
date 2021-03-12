@@ -1,0 +1,4 @@
+<Context>
+<!-- These override settings in default.properties -->
+<!-- 	<Parameter name="puck.masterNotifier.threadPoolSize" value="100" /> -->
+</Context>

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+[ ! ${DIALOGS_G} ] && DIALOGS_G=DILOGS || return 0
+
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+showInfoDialog () {
+      local text="$1"
+  local title="$2"
+  title=${title:="Information"}
+  if isSSH; then
+    dialog --title "$2" --msgbox "$text" 15 40 
+  else
+     zenity --info --title "$title" --text "$text" --no-wrap --ok-label "Yes"  2>/dev/null 
+  fi
+
+}
+#-----------------------------------------------------------------------------------------------
+#  Display a yes/no dialog and get the user's response
+#-----------------------------------------------------------------------------------------------
+showYesNoDialog () {
+  local text="$1"
+  local title="$2"
+  title=${title:="Question"}
+  if isSSH; then
+    if dialog --title "$2" --yesno "$text" 15 40 
+    then 
+      return 0
+    else
+      return 1
+    fi
+  else
+    if zenity --question --title "$title" --text "$text" --no-wrap --ok-label "Yes" --cancel-label "No" 2>/dev/null 
+    then
+     return 0
+    else
+     return 1
+    fi
+  fi
+
+}

@@ -1,0 +1,93 @@
+Using DirectP
+Full discharge at P/4
+Activate cell balancing
+Rest 1h or longer until all cells are balanced
+Deactivate cell balancing
+Full charge at P/4 (100% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (95% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (90% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (85% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (80% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 24min at P/4 (70% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 24min at P/4 (60% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 24min at P/4 (50% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 24min at P/4 (40% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 24min at P/4 (30% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 24min at P/4 (20% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (15% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (10% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (5% SOE)
+Rest 1h
+Discharge for 30s at P/3
+Rest 10min
+Charge for 30s at P/3
+Rest 10min
+Discharge for 12min at P/4 (0% SOE)
+Rest 1h
+Charge for 30s at P/3
+Rest 10min
+Charge for 24min at P/4
+Rest 1h

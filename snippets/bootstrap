@@ -1,0 +1,36 @@
+#!/bin/bash
+#-----------------------------------------------------------------------------------------------
+# clear circular load blocks
+#-----------------------------------------------------------------------------------------------
+clearLoadSemaphores () {
+  unset COLOR_G
+  unset MENUCFG_G
+  unset SHAREDVARS_G
+  unset GENERALFUNCTIONS_G
+  unset CURSOR_G
+  unset DEPLOYWAR_G
+  unset LOADWAR_G
+  unset RUNREGRESSION_G
+  unset DIALOGS_G
+  unset ENVDISCOVERY_G
+  unset MANAGE_TOMCAT_G
+  unset SYSTEMSETUP_G
+  unset EDITFILES_G
+  unset VIEWLOGS_G
+}
+#-----------------------------------------------------------------------------------------------
+# load support files
+#-----------------------------------------------------------------------------------------------
+loadSupportFiles () {
+. /home/powin/tools/snippets/color              # colors for background and cursor
+. /home/powin/tools/snippets/cursor             # cursor positioning 
+. /home/powin/tools/snippets/generalFunctions   # misc, menu builder etc.
+. /home/powin/tools/shconfig/menucfg            # properties, user variables
+. /home/powin/tools/loadWar                     # load war files from archiva
+. /home/powin/tools/deployWar                   # deploy war files to turtle
+. /home/powin/tools/manageTomcat                # tomcat functions
+. /home/powin/tools/runRegression               # run regression tests
+. /home/powin/tools/systemSetup                 # set up kobold and other apps
+. /home/powin/tools/editFiles                   # edit files
+. /home/powin/tools/viewLogs                    # viewLogs
+}
