@@ -52,6 +52,18 @@ doModBusEndPoints () {
 }
 
 #-----------------------------------------------------------------------------------------------
+# Run MovePowerTest
+#-----------------------------------------------------------------------------------------------
+
+doMovePower () {
+  local mytext='This function will run the validate Power Moving.'
+  if showYesNoDialog "$mytext" "Validate Power Moving"
+  then
+     runRegression MovePowerIntegrationTest
+  fi
+}
+
+#-----------------------------------------------------------------------------------------------
 # Checkout the source
 #-----------------------------------------------------------------------------------------------
 doCheckoutSource () {
@@ -85,7 +97,7 @@ runRegression () {
 # Regression Test Menu
 #-----------------------------------------------------------------------------------------------
 function doRegressionTests {
-local menuItems=('Checkout Source' 'ModBus Endpoint Test' 'Sunspec Power App Test' 'Power Command App Test')
-local functions=('(doCheckoutSource)' '(doModBusEndPoints);curDwn=1' '(doSunspecPowerAppTest);curDwn=1'  '(doPowerCommandAppTest);curDwn=1')
+local menuItems=('Checkout Source' 'ModBus Endpoint Test' 'Sunspec Power App Test' 'Power Command App Test' 'Move Power Test')
+local functions=('(doCheckoutSource)' '(doModBusEndPoints);curDwn=1' '(doSunspecPowerAppTest);curDwn=1'  '(doPowerCommandAppTest);curDwn=1' '(doMovePower);curDwn=1')
 genMenu "RegressionTests" "${menuItems[@]}" "${functions[@]}"
 }
