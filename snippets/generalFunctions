@@ -50,7 +50,7 @@ extractXml () {
 getHighestVersion () {
     local let major="$2"
     local let minor="$3"
-    local latest=$(extractXml "tools/${1}-versions.xml" latest)
+    local latest=$(extractXml "tools/${1}-versions.xml" release)
     if [[ "${latest}" == *"${major}.${minor}"* ]] ;
     then 
        echo $latest
@@ -159,8 +159,8 @@ writeAppVersions () {
 displayAppVersions () {
   cntr ; echo -en "${BOLD}${LTGREEN}turtle: ${RESET}"  ; trim "$1"
   cntr ; echo -en "${BOLD}${LTGREEN}kobold: ${RESET}"   ; trim "$2"
-  cntr ; echo -en "${BOLD}${LTGREEN}coblynau: ${RESET}"  ; trim "$3"
-  cntr ; echo -en "${BOLD}${LTGREEN}knocker: ${RESET}"  ; trim  "$4"
+  cntr ; echo -en "${BOLD}${LTGREEN}coblynau: ${RESET}"  ; trim  "$3"
+  cntr ; echo -en "${BOLD}${LTGREEN}knocker: ${RESET}"  ; trim "$4"
   cntr ; echo -en "${BOLD}${LTGREEN}primrose: ${RESET}"  ; trim  "$5"
 }
 
@@ -172,15 +172,15 @@ readAppVersionsFromArchiva () {
      cntr ; read -e -i "latest" -p "Major Version: " major
      if [[ $major = "latest" ]] ;
      then
-      TURTLE_VERSION=$(extractXml tools/turtle-versions.xml latest)
+      TURTLE_VERSION=$(extractXml tools/turtle-versions.xml release)
       cntr ; echo turtle: $TURTLE_VERSION
-      KOBOLD_VERSION=$(extractXml tools/kobold-versions.xml latest)
+      KOBOLD_VERSION=$(extractXml tools/kobold-versions.xml release)
       cntr ; echo kobold: $KOBOLD_VERSION
-      COB_VERSION=$(extractXml tools/coblynau-versions.xml latest)
+      COB_VERSION=$(extractXml tools/coblynau-versions.xml release)
       cntr ; echo coblynau: $COB_VERSION
-      KNOCKER_VERSION=$(extractXml tools/knocker-versions.xml latest)
+      KNOCKER_VERSION=$(extractXml tools/knocker-versions.xml release)
       cntr ; echo knocker: $KNOCKER_VERSION
-      PRIMROSE_VERSION=$(extractXml tools/primrose-versions.xml latest)
+      PRIMROSE_VERSION=$(extractXml tools/primrose-versions.xml release)
       cntr ; echo primrose: $PRIMROSE_VERSION
       else 
             cntr ; read -e -p "Minor Version : " minorstart

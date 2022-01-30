@@ -1,10 +1,10 @@
-#read -p "0.0 Enter your Archiva logon [$ARCHIVA_LOGON_DEF]: " ARCHIVA_LOGON
-#read -s -p "0.1 Enter your Archiva password: " ARCHIVA_PASSWORD
+#read -p "Enter your Archiva logon: " user
+#read -s -p "Enter your Archiva password: " pw
 ARCHIVA_LOGON=rickf@powin.com
-ARCHIVA_PASSWORD=@rch1v@
+ARCHIVA_PASSWORD=@rch1v@1234
 echo
 #TURTLE_VERSION='2.23.28'
-TURTLE_VERSION='2.23.71'
+TURTLE_VERSION='2.26.76'
 
 read -e -p "0.4 Hit enter to execute." EXECUTE
 

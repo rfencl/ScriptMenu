@@ -40,7 +40,14 @@ function flushRedis  {
     cntr ; echo -e Redis flushed: $(redis-cli flushall)
   fi
 }
-
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+function doSetSoc {
+  echo powin | editFile "/etc/powin/soc/soc1_1.soc"
+  local STACKSIM="$POWIN_PATH/stacksimulator.json"
+  editFile $STACKSIM
+}
 #-----------------------------------------------------------------------------------------------
 #
 #-----------------------------------------------------------------------------------------------
@@ -63,7 +70,7 @@ function doListDirs {
 doListInstalled () {
   echo -e $(storeCursor)
   clear
-  cntr ; echo -e 'Retreiving data from host'
+  cntr ; echo -e 'Retrieving data from host'
   [[ $KOBOLD_DOMAIN == "SETME" ]] && { echo "Configuration error, setup app domains in menucfg" ; return 1 ; } 
   local koboldVersion=$(curl -sk  --request GET --url "https://$KOBOLD_DOMAIN:8443/kobold/status" | grep 'Version=' | sed 's/Version=//' | sed 's/\n//') 
   local knockerVersion=$(curl -sk  --request GET --url "https://$KNOCKER_DOMAIN:8443/knocker/status" | grep 'Version=' | sed 's/Version=//') 
@@ -94,7 +101,7 @@ checkLiveStack () {
 # System Setup Menu
 #-----------------------------------------------------------------------------------------------
 function doSystemSetup {
-local menuItems=('Flush redis' 'Troubleshoot' 'List Dirs' 'Manage App Versions')
-local functions=('(flushRedis);curDwn=1' '(troubleshoot);curDwn=1' '(doListDirs);curDwn=1' '(doManageAppVersions)')
+local menuItems=('Set SOC' 'Flush redis' 'Troubleshoot' 'List Dirs' 'Manage App Versions')
+local functions=('(doSetSoc)' '(flushRedis);curDwn=1' '(troubleshoot);curDwn=1' '(doListDirs);curDwn=1' '(doManageAppVersions)')
 genMenu "System Setup" "${menuItems[@]}" "${functions[@]}"
 }

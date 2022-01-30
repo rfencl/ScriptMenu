@@ -1,0 +1,183 @@
+g#!/bin/bash
+[ ! ${GENERALFUNCTIONS_G} ] &&  GENERALFUNCTIONS_G='GENERALFUNCTIONS' ||  return 0
+
+. ${SMOKETESTDIR}sharedVariables.sh 
+
+#--------------------------------------------------------------------------------------------
+# pulls the value from the xml tag
+# $1 is filename appversions
+# $2 is the tag
+#--------------------------------------------------------------------------------------------
+extractXml () {
+    local file="$1"
+    local tag="$2"
+    echo $(grep $tag $file | sed "s/<$tag>//" | sed "s/<\/$tag>//")
+}
+
+#--------------------------------------------------------------------------------------------
+#  given an app and a major and minor version find the highest build number
+#  if the major or minor number doesn't exist, return the latest build.
+#--------------------------------------------------------------------------------------------
+getHighestVersion () {
+    local let major="$2"
+    local let minor="$3"
+    local latest=$(extractXml "${SMOKETESTDIR}${1}-versions.xml" release)
+    if [[ "${latest}" == *"${major}.${minor}"* ]] ;
+    then 
+       echo $latest
+    else
+        (( minor++ ))
+        local let lineNum=$(getLineNum "${major}.${minor}.0" "${SMOKETESTDIR}${1}-versions.xml")
+        lineNum=${lineNum##* }   
+        if [ $lineNum ]
+        then
+           (( lineNum-- ))
+            echo $(cat ${SMOKETESTDIR}${1}-versions.xml | sed -n "${lineNum}"p | sed "s/<version>//" | sed "s/<\/version>//")   
+        else
+            echo $latest
+        fi
+    fi
+}
+
+#---------------------------------------------------------------------------------------
+# Reads the maven-metadata.xml for the app specified in $1
+#--------------------------------------------------------------------------------------------
+getAppVer () {
+        checkArchivaCredentials
+        if [[ "turtlekoboldcoblynauknockerprimrose" == *"$1"* ]] ;
+        then
+          echo "getting latest for $1"
+          wget -q --no-check-certificate --user="$archiva_user" --password "$archiva_password" \
+          https://archiva.powindev.com/repository/internal/com/powin/"${1}"/maven-metadata.xml \
+          -O "${SMOKETESTDIR}${1}"-versions.xml
+        else
+          echo  "Invalid app name" 
+          return 1 
+        fi
+}
+#--------------------------------------------------------------------------------------------
+#  Read the latest maven-metadata from Archiva for each app
+#--------------------------------------------------------------------------------------------
+updateAppVersions () {
+    checkArchivaCredentials
+    getAppVer turtle
+    getAppVer kobold
+    getAppVer coblynau
+    getAppVer knocker
+    getAppVer primrose
+}
+
+#--------------------------------------------------------------------------------------------
+# returns the line number where find appears in file
+#--------------------------------------------------------------------------------------------
+getLineNum () {
+  echo $(grep -n "$1" "$2" | sed 's/:.*//')
+}
+#--------------------------------------------------------------------------------------------
+# Prompts for login credentials and caches them in props file.
+#--------------------------------------------------------------------------------------------
+checkArchivaCredentials () {
+  [[ -f $ARCHIVA_PROPS ]] &&  . "$ARCHIVA_PROPS"
+  if [[ -z $archiva_user || -z $archiva_password ]];
+  then
+     echo Set your archiva credentials in default.properties
+  fi
+}
+
+checkSubversionCredentials () {
+  [[ -f $ARCHIVA_PROPS ]] &&  . "$ARCHIVA_PROPS"
+  echo $SVNUSER
+  if [[ -z $SVNUSER || -z $SVNPASS ]];
+  then
+     echo Set your svn credentials in default.properties
+  fi
+}
+
+#-------------------------------------------------------------------------------------------
+# Sets the variables to the current app version
+# TURTLE_VERSION
+# KOBOLD_VERSION
+# KNOCKER_VERSION
+# COB_VERSION
+# PRIMROSE_VERSION
+#-------------------------------------------------------------------------------------------
+getAppVersions () {
+  [[ -f $APP_VERSION_PROPS ]] &&  . "$APP_VERSION_PROPS"
+}
+
+#--------------------------------------------------------------------------------------------
+# Trim leading and trailing spaces from a string
+#--------------------------------------------------------------------------------------------
+trim () {
+  echo "$(echo -e "${1}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+}
+
+#--------------------------------------------------------------------------------------------
+# Compare new versions with old versions, set the flag NEW_VERSION_DETECTED = true if new version.
+#--------------------------------------------------------------------------------------------
+checkNewVersion() {
+         # If there is a new version     
+          local t=$(diff $APP_VERSION_PROPS $APP_VERSION_PROPS_NEW)
+          if [[ ! -z $t ]]; 
+          then 
+             # set the flag and copy the new version file to the old versions
+             NEW_VERSION_DETECTED=true
+             printf "New version detected in %s.%s\n\n" $1 $2
+          fi
+}
+
+
+#--------------------------------------------------------------------------------------------
+# Write the versions chosen to file
+#--------------------------------------------------------------------------------------------
+writeAppVersions () {
+         
+  #cat "${SMOKETESTDIR}.sudopw" | sudo -S > /dev/null 2>&1 echo "TURTLE_VERSION=$TURTLE_VERSION" > "$APP_VERSION_PROPS_NEW"
+  #cat "${SMOKETESTDIR}.sudopw" | sudo -S > /dev/null 2>&1 echo "KOBOLD_VERSION=$KOBOLD_VERSION" >> "$APP_VERSION_PROPS_NEW"
+  #cat "${SMOKETESTDIR}.sudopw" | sudo -S > /dev/null 2>&1 echo "KNOCKER_VERSION=$KNOCKER_VERSION" >> "$APP_VERSION_PROPS_NEW"
+  #cat "${SMOKETESTDIR}.sudopw" | sudo -S > /dev/null 2>&1 echo "COB_VERSION=$COB_VERSION" >> "$APP_VERSION_PROPS_NEW"
+  #cat "${SMOKETESTDIR}.sudopw" | sudo -S > /dev/null 2>&1 echo "PRIMROSE_VERSION=$PRIMROSE_VERSION" >> "$APP_VERSION_PROPS_NEW"
+
+  echo "TURTLE_VERSION=$TURTLE_VERSION" > "$APP_VERSION_PROPS_NEW"
+  echo "KOBOLD_VERSION=$KOBOLD_VERSION" >> "$APP_VERSION_PROPS_NEW"
+  echo "KNOCKER_VERSION=$KNOCKER_VERSION" >> "$APP_VERSION_PROPS_NEW"
+  echo "COB_VERSION=$COB_VERSION" >> "$APP_VERSION_PROPS_NEW"
+  echo "PRIMROSE_VERSION=$PRIMROSE_VERSION" >> "$APP_VERSION_PROPS_NEW"
+
+  if [[ ! -e $APP_VERSION_PROPS ]];
+  then 
+    cp "$APP_VERSION_PROPS_NEW" "$APP_VERSION_PROPS"
+  fi
+
+} 
+
+#--------------------------------------------------------------------------------------------
+# pulls the version from the latest tag for each app
+#--------------------------------------------------------------------------------------------
+readAppVersionsFromArchiva () {
+     local major=$1
+     local minorstart=$2
+     setVersion $major $minorstart  
+     if [[ $major = "latest" ]] ;
+     then
+      TURTLE_VERSION=$(extractXml ${SMOKETESTDIR}turtle-versions.xml latest)
+      echo turtle: $TURTLE_VERSION
+      KOBOLD_VERSION=$(extractXml ${SMOKETESTDIR}kobold-versions.xml latest)
+      echo kobold: $KOBOLD_VERSION
+      COB_VERSION=$(extractXml ${SMOKETESTDIR}coblynau-versions.xml latest)
+      echo coblynau: $COB_VERSION
+      KNOCKER_VERSION=$(extractXml ${SMOKETESTDIR}knocker-versions.xml latest)
+      echo knocker: $KNOCKER_VERSION
+      PRIMROSE_VERSION=$(extractXml ${SMOKETESTDIR}primrose-versions.xml latest)
+      echo primrose: $PRIMROSE_VERSION
+      else 
+            TURTLE_VERSION=$(getHighestVersion turtle $major $minorstart)
+            KOBOLD_VERSION=$(getHighestVersion kobold $major $minorstart)
+            COB_VERSION=$(getHighestVersion coblynau $major $minorstart)
+            KNOCKER_VERSION=$(getHighestVersion knocker $major $minorstart)
+            PRIMROSE_VERSION=$(getHighestVersion primrose $major $minorstart)
+      fi
+    writeAppVersions
+}
+
+

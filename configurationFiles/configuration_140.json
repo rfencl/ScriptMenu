@@ -1,0 +1,38 @@
+{
+  "blockConfiguration" : {
+    "stationCode" : "TEST9",
+   "blockIndex" : 1,
+    "arrayConfigurations" : [ {    
+      "stringConfigurations": [ {
+        "configurationName": "S11-140-120-1000-E40",
+        "stringIndexes": [1]
+      } ],
+      "arrayIndexes" : [ 1 ],
+      "useWarnStop" : false,
+      "dcTopology" : {
+        "childNodes" : [ {
+          "childNodes" : [ {
+            "stringIndexes" : [ 1 ],
+            "dcTopologyNodeType" : "StackList",
+            "dcTopologyNodeName" : "Stack1-2"
+          } ],
+          "dcTopologyNodeType" : "DCCombiner",
+          "dcTopologyNodeName" : "Container1",
+          "hasCurrentLimit" : true,
+          "chargeCurrentLimitAmps" : 2000,
+          "dischargeCurrentLimitAmps" : 2000
+        } 
+        ],
+        "dcTopologyNodeType" : "PowerElectronics",
+        "dcTopologyNodeName" : "PCS",
+        "hasCurrentLimit" : true,
+        "chargeCurrentLimitAmps" : 0,
+        "dischargeCurrentLimitAmps" : 0
+      }
+    } ],
+    "simplifiedSafetyConfig" : true,
+    "turtleConfigurationCommandsName":"Stack140Gen2_0TurtleConfig",
+    "socoperatingRangeMax" : 95,
+    "socoperatingRangeMin" : 5
+  }
+}

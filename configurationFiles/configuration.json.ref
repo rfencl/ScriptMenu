@@ -1,0 +1,50 @@
+{
+  "blockConfiguration" : {
+    "stationCode" : "STATIONCODE",
+    "blockIndex" : 1,
+    "arrayConfigurations" : [ {    
+      "stringConfigurations": [ {
+        "configurationName": "CONTROL_SCHEME_NAME",
+        "stringIndexes": [1, 2]
+	  } ],
+      "arrayIndexes" : [ 1 ],
+      "useWarnStop" : false,
+      "dcTopology" : {
+        "childNodes" : [ {
+          "childNodes" : [ {
+            "stringIndexes" : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ],
+            "dcTopologyNodeType" : "StackList",
+            "dcTopologyNodeName" : "Stack1-16"
+          } ],
+          "dcTopologyNodeType" : "DCCombiner",
+          "dcTopologyNodeName" : "Container1",
+          "hasCurrentLimit" : true,
+          "chargeCurrentLimitAmps" : 2000,
+          "dischargeCurrentLimitAmps" : 2000
+        }, 
+        {
+          "childNodes" : [ {
+            "stringIndexes" : [ 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 ],
+            "dcTopologyNodeType" : "StackList",
+            "dcTopologyNodeName" : "Stack17-32",
+            "hasCurrentLimit" : false
+          } ],
+          "dcTopologyNodeType" : "DCCombiner",
+          "dcTopologyNodeName" : "Container2",
+          "hasCurrentLimit" : true,
+          "chargeCurrentLimitAmps" : 2000,
+          "dischargeCurrentLimitAmps" : 2000
+        } ],
+        "dcTopologyNodeType" : "PowerElectronics",
+        "dcTopologyNodeName" : "PCS",
+        "hasCurrentLimit" : true,
+        "chargeCurrentLimitAmps" : 99999,
+        "dischargeCurrentLimitAmps" : 99999
+      }
+    } ],
+    "simplifiedSafetyConfig" : true,
+    "turtleConfigurationCommandsName":"Stack140Gen1_1TurtleConfig",
+    "socoperatingRangeMax" : 95,
+    "socoperatingRangeMin" : 5
+  }
+}

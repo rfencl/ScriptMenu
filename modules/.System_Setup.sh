@@ -4,6 +4,7 @@ let itemCnt=0
 clear
 cntrPrompt "$title"
 cntr ; echo -e  "${RED}${itemCnt}: Exit";   ((itemCnt++))
+cntr ; echo -e "${LTCYAN}${itemCnt}:" Set SOC; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${itemCnt}:" Flush redis; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${itemCnt}:" Troubleshoot; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${itemCnt}:" List Dirs; ((itemCnt++))
@@ -13,6 +14,7 @@ let labelCnt=0
 let curDwn=$((itemCnt+1))
 case "$REPLY" in
 $((labelCnt++))) clear; exit 0;;
+$((labelCnt++))) (doSetSoc);;
 $((labelCnt++))) (flushRedis);curDwn=1;;
 $((labelCnt++))) (troubleshoot);curDwn=1;;
 $((labelCnt++))) (doListDirs);curDwn=1;;

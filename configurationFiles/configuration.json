@@ -1,0 +1,38 @@
+{
+  "blockConfiguration" : {
+    "stationCode" : "QASTACK230E",
+   "blockIndex" : 1,
+    "arrayConfigurations" : [ {    
+      "stringConfigurations": [ {
+        "configurationName": "S22-230-140-1000-C280-110-derate01",
+        "stringIndexes": [1, 2, 3, 4]
+      } ],
+      "arrayIndexes" : [ 1, 2 ],
+      "useWarnStop" : false,
+      "dcTopology" : {
+        "childNodes" : [ {
+          "childNodes" : [ {
+            "stringIndexes" : [ 1, 2, 3, 4 ],
+            "dcTopologyNodeType" : "StackList",
+            "dcTopologyNodeName" : "Stack1-4"
+          } ],
+          "dcTopologyNodeType" : "DCCombiner",
+          "dcTopologyNodeName" : "Container1",
+          "hasCurrentLimit" : true,
+          "chargeCurrentLimitAmps" : 2000,
+          "dischargeCurrentLimitAmps" : 2000
+        }
+        ],
+        "dcTopologyNodeType" : "PowerElectronics",
+        "dcTopologyNodeName" : "PCS",
+        "hasCurrentLimit" : true,
+        "chargeCurrentLimitAmps" : 2000,
+        "dischargeCurrentLimitAmps" : 2000
+      }
+    } ],
+    "simplifiedSafetyConfig" : true,
+    "turtleConfigurationCommandsName":"Stack230EGen2_2TurtleConfig",
+    "socoperatingRangeMax" : 95,
+    "socoperatingRangeMin" : 5
+  }
+}

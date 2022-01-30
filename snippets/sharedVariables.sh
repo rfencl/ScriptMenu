@@ -33,6 +33,7 @@ export TURTLE='turtle'
 # ------------------------------------------------------
 now=$(LC_ALL=C date +"%m-%d-%Y %r")        # Returns: 06-14-2015 10:34:40 PM
 datestamp=$(LC_ALL=C date +%Y-%m-%d)       # Returns: 2015-06-14
+sdatestamp=$(LC_ALL=C date +%Y%m%d)        # Returns: 20150614
 hourstamp=$(LC_ALL=C date +%r)             # Returns: 10:34:40 PM
 timestamp=$(LC_ALL=C date +%Y%m%d_%H%M%S)  # Returns: 20150614_223440
 today=$(LC_ALL=C date +"%m-%d-%Y")         # Returns: 06-14-2015
@@ -45,4 +46,4 @@ gmtdate=$(LC_ALL=C date -u -R | sed 's/\+0000/GMT/') # Returns: Wed, 13 Jan 2016
 # is being run on.
 # ------------------------------------------------------
 thisHost=$(hostname)
-scriptVersion=v0.15
+scriptVersion=v0.21    # cd to /home/powin when script starts

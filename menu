@@ -90,6 +90,7 @@ echo $isLiveStack
 }
 #####################
 # Launch
+cd /home/powin
 init
 main
 

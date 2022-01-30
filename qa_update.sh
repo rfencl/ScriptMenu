@@ -1,7 +1,7 @@
 #read -e -p "0.0 Enter your Archiva logon [$ARCHIVA_LOGON_DEF]: " ARCHIVA_LOGON
 #read -e -s -p "0.1 Enter your Archiva password: " ARCHIVA_PASSWORD
 ARCHIVA_LOGON=rickf@powin.com
-ARCHIVA_PASSWORD=@rch1v@
+ARCHIVA_PASSWORD=@rch1v@1246
 echo
 #KOBOLD_VERSION='2.21.20'
 KOBOLD_VERSION='2.23.10'
