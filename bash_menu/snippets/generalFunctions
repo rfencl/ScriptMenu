@@ -76,7 +76,7 @@ printSpinner () {
 genMenu () {
     title="$1" ; shift
     outfile="$MENU_HOME/modules/.${title// /_}".sh
-    if [ -e $outfile ]; then . "$outfile"; return; fi
+    # if [ -e $outfile ]; then . "$outfile"; return; fi   # uncomment this line to write-protect you menu
     arr=("$@")
     numItems=${#arr[@]}
     #echo "${title// /_}" '() {' > "$outfile"
