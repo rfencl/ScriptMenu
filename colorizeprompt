@@ -1,2 +1,0 @@
-echo PS1="[\[\e[31m\]\u\[\e[m\]\[\e[33m\]@\h\[\e[m\]:\W]$ " >> ~/.bashrc
-. ~/.bashrc

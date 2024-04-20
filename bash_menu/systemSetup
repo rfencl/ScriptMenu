@@ -1,0 +1,109 @@
+#!/bin/bash
+[ ! ${SYSTEMSETUP_G} ] && SYSTEMSETUP_G='SYSTEMSETUP' || return 0
+
+. $MENU_HOME/snippets/color
+. $MENU_HOME/snippets/cursor
+. $MENU_HOME/shconfig/menucfg
+. $MENU_HOME/snippets/generalFunctions
+
+#***********************************************************************************************
+# System Setup Menu
+#***********************************************************************************************
+
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+function troubleshoot  {
+  if  dialog --title "Press Yes to continue." --yesno "This function will restart tomcat, flush redis, drop the kobold2 schema and remove the dragonkey, \nNote: you won't be able to login to kobold untl the dragonkey.json reappears. The dragonkey appears right away after tomcat is restarted twice." 25 50
+  then
+    stopTomcat
+    #sudo rm -drf /etc/powin
+    #sudo tar -xzvf $HOME/tools/powin2.tgz -C /etc
+    redis-cli flushall
+    cntr ; sudo service redis restart
+    cntr ; psql -U coblynaudbuser -d coblynaudb -c "drop schema kobold2 cascade;"
+    if [ -e "/etc/powin/dragonkey.json" ] ; then
+     sudo rm /etc/powin/dragonkey.json
+    fi
+   startTomcat
+   stopTomcat
+   sudo chmod 777 /opt/tomcat/logs/*.bk  # This needs to be parameterized
+   startTomcat
+   waitDragonKey
+  fi
+ }
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+function flushRedis  {
+
+  if  dialog --title "Press Yes to continue." --yesno "Flush Redis?" 5 25
+  then 
+    cntr ; echo -e Redis flushed: $(redis-cli flushall)
+  fi
+}
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+function doSetSoc {
+  echo powin | editFile "/etc/powin/soc/soc1_1.soc"
+  local STACKSIM="$POWIN_PATH/stacksimulator.json"
+  editFile $STACKSIM
+}
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+function doListDirs {
+  echo $TOMCAT_LOG_DIR
+  ls $TOMCAT_LOG_DIR
+  echo 
+  echo $POWIN_PATH
+  ls $POWIN_PATH 
+  echo
+  echo $TOMCAT_PATH
+  ls $TOMCAT_PATH
+  echo $CATALINA_LOCALHOST
+  ls $CATALINA_LOCALHOST  
+}
+
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+doListInstalled () {
+  echo -e $(storeCursor)
+  clear
+  cntr ; echo -e 'Retrieving data from host'
+  [[ $KOBOLD_DOMAIN == "SETME" ]] && { echo "Configuration error, setup app domains in menucfg" ; return 1 ; } 
+  local koboldVersion=$(curl -sk  --request GET --url "https://$KOBOLD_DOMAIN:8443/kobold/status" | grep 'Version=' | sed 's/Version=//' | sed 's/\n//') 
+  local knockerVersion=$(curl -sk  --request GET --url "https://$KNOCKER_DOMAIN:8443/knocker/status" | grep 'Version=' | sed 's/Version=//') 
+  local coblynauVersion=$(curl -sk  --request GET --url "https://$COBLYNAU_DOMAIN:8443/coblynau/status" | grep 'Version=' | sed 's/Version=//') 
+  local turtleVersion=$(curl -sk  --request GET --url "https://$TURTLE_DOMAIN:8443/turtle/status" | grep 'Version=' | sed 's/Version=//') 
+  local primroseVersion=$(curl -sk  --request GET --url "https://$PRIMROSE_DOMAIN:8443/primrose/status" | grep 'Version=' | sed 's/Version=//') 
+  sleep 1
+  #for loop in {1..18}; do echo -en $(clearToEOL);  done
+  clear
+  cntr ; echo App Versions Installed:
+  displayAppVersions $turtleVersion $koboldVersion $knockerVersion $coblynauVersion $primroseVersion
+}
+
+#-----------------------------------------------------------------------------------------------
+#  
+#-----------------------------------------------------------------------------------------------
+function doManageAppVersions {
+local menuItems=('List installed App Versions'  'Refresh App Versions' 'List\\Set Latest App Versions'  'Select Specific App versions' 'Download App War Files' 'Deploy War Files')
+local functions=('(doListInstalled);curDwn=1' '(updateAppVersions);curDwn=1' '(readAppVersionsFromArchiva);curDwn=1' '(gedit tools/appversions.properties tools/*versions.xml);curDwn=1' '(loadWar);curDwn=1' '(deployWar);curDwn=1')
+genMenu "Manage AppVersions" "${menuItems[@]}" "${functions[@]}"
+}
+
+checkLiveStack () {
+ echo false
+}
+
+#-----------------------------------------------------------------------------------------------
+# System Setup Menu
+#-----------------------------------------------------------------------------------------------
+function doSystemSetup {
+local menuItems=('Set SOC' 'Flush redis' 'Troubleshoot' 'List Dirs' 'Manage App Versions')
+local functions=('(doSetSoc)' '(flushRedis);curDwn=1' '(troubleshoot);curDwn=1' '(doListDirs);curDwn=1' '(doManageAppVersions)')
+genMenu "System Setup" "${menuItems[@]}" "${functions[@]}"
+}

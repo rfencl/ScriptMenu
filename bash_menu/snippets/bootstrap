@@ -1,0 +1,24 @@
+#!/bin/bash
+#-----------------------------------------------------------------------------------------------
+# clear circular load blocks
+#-----------------------------------------------------------------------------------------------
+clearLoadSemaphores () {
+  unset COLOR_G
+  unset MENUCFG_G
+  unset SHAREDVARS_G
+  unset GENERALFUNCTIONS_G
+  unset CURSOR_G
+  unset DIALOGS_G
+  unset ENVDISCOVERY_G
+  unset SYSTEMSETUP_G
+}
+#-----------------------------------------------------------------------------------------------
+# load support files
+#-----------------------------------------------------------------------------------------------
+loadSupportFiles () {
+. $MENU_HOME/snippets/color              # colors for background and cursor
+. $MENU_HOME/snippets/cursor             # cursor positioning
+. $MENU_HOME/snippets/generalFunctions   # misc, menu builder etc.
+. $MENU_HOME/shconfig/menucfg            # properties, user variables
+. $MENU_HOME/systemSetup                 # set up kobold and other apps
+}

@@ -1,0 +1,57 @@
+#!/bin/bash
+. $MENU_HOME/snippets/bootstrap
+
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+installApp () {
+  local appMgr="$1"
+  local app="$2"
+  if ! command -v "$app" &> /dev/null
+  then
+    echo installing $app please wait.....
+    sudo $appMgr install $app -y &> /dev/null
+  fi
+}
+
+#-----------------------------------------------------------------------------------------------
+# Initialize the app by loading all the supporting files.
+# Install any missing packages
+#   dialog for all machines and zenity for the viewing machine.
+#-----------------------------------------------------------------------------------------------
+function init () {
+    clearLoadSemaphores
+    loadSupportFiles
+    if command -v apt
+    then
+      appMgr=apt
+    fi
+    
+    installApp $appMgr dialog       # use this when ssh
+    installApp $appMgr mc           # just because its there
+    installApp $appMgr htop
+    if ! isSSH
+    then 
+       installApp $appMgr zenity    # graphic dialogs
+    fi
+}
+
+#######
+# Start of Script
+main () {
+  menuItems=('Launch Midnight Commander' 'Launch HTOP' )
+  functions=('(mc)' '(htop)'  )
+  genMenu "Main Menu ($scriptVersion)" "${menuItems[@]}" "${functions[@]}"
+}
+#####################
+# Launch
+cd $HOME
+
+(return 0 2>/dev/null) && sourced=0 || sourced=1  # Is this file being sourced or run directly.
+
+if [ $sourced -ne 0 ]; then
+  init
+  main
+else
+  init
+fi

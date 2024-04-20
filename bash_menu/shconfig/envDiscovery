@@ -1,0 +1,37 @@
+#!/bin/bash
+[ ! ${ENVDISCOVERY_G} ] && ENVDISCOVERY_G='ENVDISCOVERY' || return 0
+
+#----------------------------------------------
+# returns the current machines IP 
+#----------------------------------------------
+getIP () {
+   hostname -I
+}
+
+#----------------------------------------------
+# returns the name of the OS
+# usage: [ $(getOS) == "CentOS" ] && echo yes || echo no
+#----------------------------------------------
+getOS () {
+  hostnamectl | grep Operating
+}
+
+#----------------------------------------------
+# returns true (0) if this is an ssh session
+# example usage: isSSH && echo yes || echo no
+#---------------------------------------------
+isSSH () {
+    SESSION_TYPE=console
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    SESSION_TYPE=remote/ssh
+    else
+    case $(ps -o comm= -p $PPID) in
+        sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+    esac
+    fi
+
+    [ $SESSION_TYPE == "remote/ssh" ]
+    return $?
+}
+
+

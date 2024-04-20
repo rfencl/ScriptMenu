@@ -1,0 +1,22 @@
+#!/bin/bash
+
+COLS=$(tput cols)
+
+# Menu title/Prompt
+cntrPrompt () {
+  local prompt="Choose an item: "
+  centerOn=$prompt  # global
+  [[ $# -ne 0 ]]  && centerOn=$1 && printf "\n%*s" $[$COLS/2-${#centerOn}] ; echo -e "${BOLD}$1"
+  printf "\n%*s" $[$COLS/2-${#centerOn}] ; echo -e "${BOLD}${prompt}"
+}
+
+# Aligns text that follows with the menu title/prompt      export TURTLE_VERSION
+
+#--------------------------------------------------------------------------------------------
+# center the text on the screen
+#--------------------------------------------------------------------------------------------
+cntr () {
+  printf "%*s" $[$COLS/2-${#centerOn}] 
+}
+
+

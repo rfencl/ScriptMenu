@@ -1,0 +1,110 @@
+#!/bin/bash
+[ ! ${GENERALFUNCTIONS_G} ] &&  GENERALFUNCTIONS_G='GENERALFUNCTIONS' ||  return 0
+
+. $MENU_HOME/shconfig/menucfg
+. $MENU_HOME/snippets/sharedVariables.sh
+. $MENU_HOME/snippets/centerText
+. $MENU_HOME/snippets/cursor
+. $MENU_HOME/snippets/color
+
+
+
+
+#--------------------------------------------------------------------------------------------
+# Prompts the user to press any key to continue(sudo service tomcat status | grep running)
+#--------------------------------------------------------------------------------------------
+getKey () {
+  [[ $1 -eq 1 ]] && read -n1 -p "Press any key to continue"
+}
+
+#--------------------------------------------------------------------------------------------
+# pulls the value from the xml tag
+# $1 is filename 
+# $2 is the tag
+#--------------------------------------------------------------------------------------------
+extractXml () {
+    local file="$1"
+    local tag="$2"
+    echo $(grep $tag $file | sed "s/<$tag>//" | sed "s/<\/$tag>//")
+}
+
+
+#--------------------------------------------------------------------------------------------
+# returns the line number where find appears in file
+#--------------------------------------------------------------------------------------------
+getLineNum () {
+  echo $(sudo grep -n "$1" "$2" | sed 's/:.*//')
+}
+
+trim () {
+  echo "$(echo -e "${1}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+}
+
+#--------------------------------------------------------------------------------------------
+#  Remove all files older than number of days passed.
+#--------------------------------------------------------------------------------------------
+removeOldFiles () {
+  local path="$1"
+  local let days="$2"
+  find $path/* -type f -mtime +${days} -exec rm -f {} \;
+}
+
+let spinCounter=0
+spinChars='|/-\|/-\'
+#--------------------------------------------------------------------------------------------
+# Wait Spinner
+#--------------------------------------------------------------------------------------------
+printSpinner () {
+   echo -ne "$BOLD" ; echo -ne "${spinChars:(( spinCounter++ )):1}"
+   (( spinCounter=spinCounter%8 ))
+   echo -en $(moveCursorBackward 1)
+}
+
+#--------------------------------------------------------------------------------------------
+# generate a menu
+#
+# Example Usage: 
+# arr1=('Edit File' 'View Logs' 'Manage Tomcat'  'Flush redis' 'Toggle Stack Simulator \(currently: $stackSimON\)' 'List Dirs' 'Manage App Versions')
+# arr2=("(doEditFile)" "(doViewLogs)" "(doManageTomcat)" "(flushRedis);curDwn=1" "enableStackSim;curDwn=1" "(doListDirs);curDwn=1" "(doManageAppVersions)")
+# genMenu "Main Menu" "${arr1[@]}" "${arr2[@]}"
+#
+# Note:
+#    Wrapping methods in () will execute that method in a subshell, this is required so exit returns to the previous menu
+#     in the case of nested menus.
+#    ;curDwn=1 appended to the method call will force a keypress to continue prompt
+#--------------------------------------------------------------------------------------------
+genMenu () {
+    title="$1" ; shift
+    outfile="$MENU_HOME/modules/.${title// /_}".sh
+    if [ -e $outfile ]; then . "$outfile"; return; fi
+    arr=("$@")
+    numItems=${#arr[@]}
+    #echo "${title// /_}" '() {' > "$outfile"
+    echo 'while true' > "$outfile"
+    echo 'do'         >> "$outfile"
+    echo  'let itemCnt=0' >> "$outfile"
+    echo 'clear' >> "$outfile"
+    echo 'cntrPrompt "$title"' >> "$outfile"
+    echo 'cntr ; echo -e ' '"${RED}${itemCnt}: Exit";   ((itemCnt++))'  >> "$outfile"
+    for (( i=0; i < $numItems/2; i=i+1 )); 
+       do
+           echo 'cntr ; echo -e "${LTCYAN}${itemCnt}:"' "${arr[i]}"'; ((itemCnt++))' >> "$outfile"
+       done
+  echo 'read -sn1' >> "$outfile"
+  echo 'let labelCnt=0' >> "$outfile"
+  echo 'let curDwn=$((itemCnt+1))' >> "$outfile"
+  echo 'case "$REPLY" in' >> "$outfile"
+  echo '$((labelCnt++))) clear; exit 0;;' >> "$outfile"
+    for (( i=$numItems/2; i < $numItems; i=i+1 )); 
+       do
+           echo '$((labelCnt++))) '"${arr[i]}"';;'  >> "$outfile"
+       done
+       echo ' *) curDwn=1 ;;' >> "$outfile"
+  echo 'esac' >> "$outfile"
+  echo 'moveCursorDown $curDwn ; cntr ; getKey $curDwn' >> "$outfile"
+  echo 'done' >> "$outfile"
+  #echo '}' >> $outfile
+  . "$outfile"
+  chmod 555 "$outfile"
+}
+
