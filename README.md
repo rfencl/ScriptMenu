@@ -5,8 +5,8 @@
 4. Create menus for different classes of commands
 5. Useful for remote access via ssh.
 # Basic Layout
-The menu system has a set of functions organized in files. The menus can be organized in a hierarchical fashion with menu defined as the main entry point.
-Funcitons and sub menus can be ordered any way you like.
+The menu system has a set of functions organized in files. The menus can be organized in a hierarchical fashion with the file  "menu" defined as the main entry point.
+Functions and sub menus can be ordered any way you like.
 
 I put the menu definition in a file and the implementiong functions in another to help keep things organized.
 
