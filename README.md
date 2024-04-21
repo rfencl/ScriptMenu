@@ -32,5 +32,6 @@ would be overwritten immediately.
 ```
 functions=('(mc)' '(htop)'  '(fn1);curDwn=1')
 ```
-![image](https://github.com/rfencl/ScriptMenu/assets/2704939/79bc26ad-537a-4999-b90d-7f1b5b19799d)
+
+![image](https://github.com/rfencl/ScriptMenu/assets/2704939/68164af8-cb0d-4a05-8af3-21d720349ec6)
 
