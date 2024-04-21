@@ -30,6 +30,7 @@ function init () {
     installApp $appMgr dialog       # use this when ssh
     installApp $appMgr mc           # just because its there
     installApp $appMgr htop
+    installApp $appMgr meld
     if ! isSSH
     then 
        installApp $appMgr zenity    # graphic dialogs
@@ -39,8 +40,8 @@ function init () {
 #######
 # Start of Script
 main () {
-  menuItems=('Launch Midnight Commander' 'Launch HTOP' )
-  functions=('(mc)' '(htop)'  )
+  menuItems=('Launch Midnight Commander' 'Launch HTOP' 'Launch Archive Manager' 'Launch meld' 'fn5' 'fn6' 'fn7' 'fn8' 'fn9' 'fn10' 'fn11' 'fn12')
+  functions=('(mc)' '(htop)'  '(file-roller)' '(meld)' '(fn5);curDwn=1' '(fn6);curDwn=1' '(fn7);curDwn=1' '(fn8);curDwn=1' '(fn9);curDwn=1' '(fn10);curDwn=1' '(fn11);curDwn=1' '(fn12);curDwn=1' )
   genMenu "Main Menu ($scriptVersion)" "${menuItems[@]}" "${functions[@]}"
 }
 #####################

@@ -85,19 +85,19 @@ genMenu () {
     echo  'let itemCnt=0' >> "$outfile"
     echo 'clear' >> "$outfile"
     echo 'cntrPrompt "$title"' >> "$outfile"
-    echo 'cntr ; echo -e ' '"${RED}${itemCnt}: Exit";   ((itemCnt++))'  >> "$outfile"
+    echo 'cntr ; echo -e ' '"${RED}${indexes[itemCnt]}: Exit";   ((itemCnt++))'  >> "$outfile"
     for (( i=0; i < $numItems/2; i=i+1 )); 
        do
-           echo 'cntr ; echo -e "${LTCYAN}${itemCnt}:"' "${arr[i]}"'; ((itemCnt++))' >> "$outfile"
+           echo 'cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:"' "${arr[i]}"'; ((itemCnt++))' >> "$outfile"
        done
   echo 'read -sn1' >> "$outfile"
   echo 'let labelCnt=0' >> "$outfile"
   echo 'let curDwn=$((itemCnt+1))' >> "$outfile"
   echo 'case "$REPLY" in' >> "$outfile"
-  echo '$((labelCnt++))) clear; exit 0;;' >> "$outfile"
+  echo '${indexes[$((labelCnt++))]})  clear; exit 0;;' >> "$outfile"
     for (( i=$numItems/2; i < $numItems; i=i+1 )); 
        do
-           echo '$((labelCnt++))) '"${arr[i]}"';;'  >> "$outfile"
+           echo '${indexes[$((labelCnt++))]})  '"${arr[i]}"';;'  >> "$outfile"
        done
        echo ' *) curDwn=1 ;;' >> "$outfile"
   echo 'esac' >> "$outfile"

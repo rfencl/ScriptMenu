@@ -1,0 +1,42 @@
+#!/bin/bash
+[ ! ${MAINMENU_G} ] &&  MAINMENU_G='MAINMENU' ||  return 0
+
+
+fn5() {
+    echo "fn5"
+}
+
+
+fn6() {
+    echo "fn6"
+}
+
+
+fn7() {
+    echo "fn7"
+}
+
+
+fn8() {
+    echo "fn8"
+}
+
+
+fn9() {
+    echo "fn9"
+}
+
+
+fn10() {
+    echo "fn10"
+}
+
+
+fn11() {
+    echo "fn11"
+}
+
+
+fn12() {
+    echo "fn12"
+}
