@@ -26,8 +26,11 @@ main () {
 ## Displaying data returned from a function
 
 In the previous example other applications were launched from the menu and when the application is closed the menu is redisplayed.<br>
-To display text in a function add ;curDwn=1 to the function array. This will prompt the user to press a key to redisplay the menu.
+To display text in a function add ;curDwn=1 to the function array. This will prompt the user to press a key to redisplay the menu.<br>
+Here '5' was pressed to execute fn5 which echoed its name to the console. Without the ';curDwn=1' appended to the function call the output <br>
+would be overwritten immediately.
 ```
 functions=('(mc)' '(htop)'  '(fn1);curDwn=1')
 ```
+![image](https://github.com/rfencl/ScriptMenu/assets/2704939/79bc26ad-537a-4999-b90d-7f1b5b19799d)
 
