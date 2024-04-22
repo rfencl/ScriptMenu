@@ -6,9 +6,9 @@
 5. Useful for remote access via ssh.
 # Basic Layout
 The menu system has a set of functions organized in files. The menus can be organized in a hierarchical fashion with the file  "menu" defined as the main entry point.
-Functions and sub menus can be ordered any way you like.
+Functions and sub menus can be ordered any way you like, the example folder structure is open to change as you see fit. This is just shell script.
 
-I put the menu definition in a file and the implementiong functions in another to help keep things organized.
+I put the menu definition in a file and the implementing functions in another to help keep things organized.
 
 Defining a menu is easy here is an example.
 
