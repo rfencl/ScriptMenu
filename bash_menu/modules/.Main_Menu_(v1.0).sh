@@ -16,6 +16,7 @@ cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" fn9; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" fn10; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" fn11; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" fn12; ((itemCnt++))
+cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" Submenu 2; ((itemCnt++))
 read -sn1
 let labelCnt=0
 let curDwn=$((itemCnt+1))
@@ -33,6 +34,7 @@ ${indexes[$((labelCnt++))]})  (fn9);curDwn=1;;
 ${indexes[$((labelCnt++))]})  (fn10);curDwn=1;;
 ${indexes[$((labelCnt++))]})  (fn11);curDwn=1;;
 ${indexes[$((labelCnt++))]})  (fn12);curDwn=1;;
+${indexes[$((labelCnt++))]})  (menu2);;
  *) curDwn=1 ;;
 esac
 moveCursorDown $curDwn ; cntr ; getKey $curDwn

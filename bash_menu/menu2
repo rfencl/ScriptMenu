@@ -1,0 +1,28 @@
+#!/bin/bash
+[ ! ${MENU2_G} ] &&  MENU2_G='MENU2' ||  return 0
+
+#. $MENU_HOME/snippets/bootstrap
+
+function init () {
+    clearLoadSemaphores
+    loadSupportFiles
+}
+#######
+# Start of Script
+menu2 () {
+  menuItems=('menu2fn1' 'menu2fn2')
+  functions=('(menu2fn1);curDwn=1' '(menu2fn2);curDwn=1' )
+  genMenu "Menu2 ($scriptVersion)" "${menuItems[@]}" "${functions[@]}"
+}
+#####################
+# Launch
+cd $HOME
+
+(return 0 2>/dev/null) && sourced=0 || sourced=1  # Is this file being sourced or run directly.
+
+#if [ $sourced -ne 0 ]; then
+  #init
+ # menu2
+#else
+  #init
+#fi

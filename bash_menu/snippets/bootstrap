@@ -1,11 +1,13 @@
 #!/bin/bash
-echo $SYSPASS | sudo -S chmod -R 777 $MENU_HOME > /dev/null 2&>/dev/null
+[ ! ${BOOTSTRAP_G} ] &&  BOOTSTRAP_G='BOOTSTRAP' ||  return 0
+echo $SYSPASS | sudo -S chmod -R 777 $MENU_HOME 2&>/dev/null
 #-----------------------------------------------------------------------------------------------
 # clear circular load blocks
 # These load guards allow you to add the dependencies directly to a file so that the 
 # file can be sourced to make debugging easier. 
 #-----------------------------------------------------------------------------------------------
 clearLoadSemaphores () {
+  unset BOOTSTRAP_G
   unset COLOR_G
   unset MENUCFG_G
   unset SHAREDVARS_G
@@ -15,6 +17,8 @@ clearLoadSemaphores () {
   unset ENVDISCOVERY_G
   unset SYSTEMSETUP_G
   unset MAINMENU_G
+  unset MENU2FN_G
+  unset MENU2_G
 }
 #-----------------------------------------------------------------------------------------------
 # load support files
@@ -25,5 +29,7 @@ loadSupportFiles () {
 . $MENU_HOME/snippets/generalFunctions   # misc, menu builder etc.
 . $MENU_HOME/shconfig/menucfg            # properties, user variables
 . $MENU_HOME/systemSetup                 # set up kobold and other apps
+. $MENU_HOME/menu2functions              # functions for menu 2
+. $MENU_HOME/menu2                       # menu2 definition
 . $MENU_HOME/mainmenu                    # functions for main menu
 }

@@ -3,17 +3,18 @@
 
 
 fn5() {
-    echo "fn5"
+    echo "Output appears on the far left of the screen."
 }
 
 
 fn6() {
-    echo "fn6"
+    cntr;echo "Output appears inline with the menu."
 }
 
 
 fn7() {
-    echo "fn7"
+    clear
+    cntr;echo "Output appears inline with the menu, but the screen was cleared first."
 }
 
 
