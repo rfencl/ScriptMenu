@@ -15,11 +15,15 @@ Tip: I have multiple menus specific to a functional domain. I just keep them run
 
 # References
 I had avoided learning bash my entire career until I came across the book "The Linux Command Line by William Shotts" is is available as a free download.
-![image](https://nostarch.com/tlcl2)
+![image](https://linuxcommand.org/images/lcl2_front_new.png)
+
 https://sourceforge.net/projects/linuxcommand/
 
 If you are new to linux and shell scripting, I highly recommend working through this book.
 I based this tool on Shotts description of menus on pg 419.
+
+The companion site has many more bash references.
+https://linuxcommand.org/
 
 # System Configuration
 Define a shell variable in you login shell .bash_aliases, .bashrc or .zshrc called MENU_HOME [ export MENU_HOME=path to this script ]
