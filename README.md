@@ -4,9 +4,30 @@
 3. Organize your menus into sub-menus
 4. Create menus for different classes of commands
 5. Useful for remote access via ssh.
+6. Keeps all your shell source in one place.
+
+# Motivation
+I use a lot of shell scripts in my daily work, I found that remembering the names of the scripts and their parameters got to be annoying. 
+The usual examples of menus in bash or zsh were too maintenance intensive, it was hard to add another entry (Shott p.419)
+Now when I have a useful script, it is just easier to add it to a menu.
+
+Tip: I have multiple menus specific to a functional domain. I just keep them running in a shell window all the time.
+
+# References
+I had avoided learning bash my entire career until I came across the book "The Linux Command Line by William Shotts" is is available as a free download.
+![image](https://nostarch.com/tlcl2)
+https://sourceforge.net/projects/linuxcommand/
+
+If you are new to linux and shell scripting, I highly recommend working through this book.
+I based this tool on Shotts description of menus on pg 419.
+
+# System Configuration
+Define a shell variable in you login shell .bash_aliases, .bashrc or .zshrc called MENU_HOME [ export MENU_HOME=path to this script ]
+
 # Basic Layout
 The menu system has a set of functions organized in files. The menus can be organized in a hierarchical fashion with the file  "menu" defined as the main entry point.
 Functions and sub menus can be ordered any way you like, the example folder structure is open to change as you see fit. This is just shell script.
+
 
 I put the menu definition in a file and the implementing functions in another to help keep things organized.
 
