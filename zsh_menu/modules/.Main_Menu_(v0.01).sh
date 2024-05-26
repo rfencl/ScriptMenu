@@ -4,10 +4,9 @@ let itemCnt=1
 clear
 cntrPrompt 'Main Menu (v0.01)'
 cntr ; echo -e  "${RED}${indexes[itemCnt]}: Exit";   ((itemCnt++))
-cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" Launch Midnight Commander; ((itemCnt++))
-cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" Launch HTOP; ((itemCnt++))
-cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" Launch Archive Manager; ((itemCnt++))
-cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" Launch meld; ((itemCnt++))
+cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" list directory; ((itemCnt++))
+cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" list all; ((itemCnt++))
+cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" list with permissions; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" fn5; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" fn6; ((itemCnt++))
 cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:" fn7; ((itemCnt++))
@@ -22,10 +21,9 @@ let labelCnt=1
 let curDwn=$((itemCnt+1))
 case "$REPLY" in
 ${indexes[$((labelCnt++))]}) clear; return 0;;
-${indexes[$((labelCnt++))]}) mc;;
-${indexes[$((labelCnt++))]}) htop;;
-${indexes[$((labelCnt++))]}) file-roller ;;
-${indexes[$((labelCnt++))]}) meld;;
+${indexes[$((labelCnt++))]}) ls;curDwn=1;;
+${indexes[$((labelCnt++))]}) ls -a;curDwn=1;;
+${indexes[$((labelCnt++))]}) ls -lart;curDwn=1;;
 ${indexes[$((labelCnt++))]}) fn5;curDwn=1;;
 ${indexes[$((labelCnt++))]}) fn6;curDwn=1;;
 ${indexes[$((labelCnt++))]}) fn7;curDwn=1;;
