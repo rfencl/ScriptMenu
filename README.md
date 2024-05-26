@@ -17,6 +17,8 @@ Tip: I have multiple menus specific to a functional domain. I just keep them run
 I had avoided learning bash my entire career until I came across the book "The Linux Command Line by William Shotts" is is available as a free download.
 ![image](https://linuxcommand.org/images/lcl2_front_new.png)
 
+Developers are notoriously egotistical and hate to try new tools. If you are comfortable repeating commands using the terminal's history or typing everything over and over again, please feel free to continue doing what is most comfortable for you. But trust me when I say that this is the easiest and fastest way to run and re-run scripts that I've found. 
+
 https://sourceforge.net/projects/linuxcommand/
 
 If you are new to linux and shell scripting, I highly recommend working through this book.
@@ -30,7 +32,7 @@ Define a shell variable in you login shell .bash_aliases, .bashrc or .zshrc call
 
 # Basic Layout
 The menu system has a set of functions organized in files. The menus can be organized in a hierarchical fashion with the file  "menu" defined as the main entry point.
-Functions and sub menus can be ordered any way you like, the example folder structure is open to change as you see fit. This is just shell script.
+Functions and sub menus can be ordered any way you like, the example folder structure is open to change as you see fit. This is just shell script. If you have any suggestions submit a pull request. 
 
 
 I put the menu definition in a file and the implementing functions in another to help keep things organized.
