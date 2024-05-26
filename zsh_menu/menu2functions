@@ -1,0 +1,13 @@
+#!/bin/zsh
+[ ! ${MENU2FN_G} ] &&  MENU2FN_G='MENU2FN' ||  return 0
+
+menu2fn1() {
+    clear
+    cntr;echo "This is the output for menu2fn1"
+}
+
+
+menu2fn2() {
+    clear
+    cntr;echo "This is the output for menu2fn2"
+}

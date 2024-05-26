@@ -1,0 +1,138 @@
+#!/bin/zsh
+# echo loading generalFunctions
+# echo before scriptVersion = $scriptVersion
+[ ! ${GENERALFUNCTIONS_G} ] &&  GENERALFUNCTIONS_G='GENERALFUNCTIONS' || return 0 # { echo generalFunctions has already been loaded, unset GENERALFUNCTIONS_G, skipping ... ; return 0 }
+
+. "$MENU_HOME/shconfig/menucfg"
+. "$MENU_HOME/snippets/sharedVariables.sh" 
+. "$MENU_HOME/snippets/dateutils.sh"
+. "$MENU_HOME/snippets/cursor"
+. "$MENU_HOME/snippets/color"
+
+
+# echo after scriptVersion = $scriptVersion
+
+ARTIFACTORY=https://artifactory.powindev.com/artifactory/libs-release-local
+
+# Menu title/Prompt
+cntrPrompt () {
+  local prompt="Choose an item: "      
+  centerOn=$prompt  # global
+  [[ $# -ne 0 ]]  && centerOn=$1 && printf "\n%*s" $[$COLS/2-${#centerOn}] ; echo -e "${BOLD}$1"
+  printf "\n%*s" $[$COLS/2-${#centerOn}] ; echo -e "${BOLD}${prompt}"
+}
+
+# Aligns text that follows with the menu title/prompt      export TURTLE_VERSION
+
+#--------------------------------------------------------------------------------------------
+# center the text on the screen
+#--------------------------------------------------------------------------------------------
+cntr () {
+  printf "%*s" $[$COLS/2-${#centerOn}] 
+}
+
+
+#--------------------------------------------------------------------------------------------
+# Prompts the user to press any key to continue(sudo service tomcat status | grep running)
+#--------------------------------------------------------------------------------------------
+getKey () {
+  
+  if [[ "$1" == "1" ]]
+  then
+  echo 'Press any key to continue...'; read -k1 -s
+  fi
+  
+}
+
+prompt () {
+	#prompt the user with given string, is skipped if OVERRIDE = true
+	#if [[ ! -n $OVERRIDE ]]
+	#then
+    local txt=$1
+		read  "?$txt [yY/nN] : " 
+		echo
+	#else
+	#	REPLY='y'
+	#fi
+}
+
+#--------------------------------------------------------------------------------------------
+# returns the line number where find appears in file
+#--------------------------------------------------------------------------------------------
+getLineNum () {
+  echo $(sudo grep -n "$1" "$2" | sed 's/:.*//')
+}
+
+trim () {
+  echo "$(echo -e "${1}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+}
+
+let spinCounter=0
+spinChars='|/-\|/-\'
+#--------------------------------------------------------------------------------------------
+# Wait Spinner
+#--------------------------------------------------------------------------------------------
+printSpinner () {
+   echo -ne "$BOLD" ; echo -ne "${spinChars:(( spinCounter++ )):1}"
+   (( spinCounter=spinCounter%8 ))
+   echo -en $(moveCursorBackward 1)
+}
+#--------------------------------------------------------------------------------------------
+# generate a menu
+#
+# Example Usage: 
+# arr1=('Edit File' 'View Logs' 'Manage Tomcat'  'Flush redis' 'Toggle Stack Simulator \(currently: $stackSimON\)' 'List Dirs' 'Manage App Versions')
+# arr2=("(doEditFile)" "(doViewLogs)" "(doManageTomcat)" "(flushRedis);curDwn=1" "enableStackSim;curDwn=1" "(doListDirs);curDwn=1" "(doManageAppVersions)")
+# genMenu "Main Menu" "${arr1[@]}" "${arr2[@]}"
+#
+# Note:
+#    Wrapping methods in () will execute that method in a subshell, this is required so exit returns to the previous menu
+#     in the case of nested menus.
+#    ;curDwn=1 appended to the method call will force a keypress to continue prompt
+#--------------------------------------------------------------------------------------------
+genMenu () {
+    #echo $SYSPASS | sudo -S chmod -R 777 $MENU_HOME
+    #echo "entering genMenu"
+    title="$1" ; shift
+    #echo $title
+    arr=("$@")
+    numItems=${#arr[@]}
+    #echo ${arr[@]}
+    #echo $numItems
+    outfile="${MENU_HOME}/modules/.${title// /_}".sh
+    echo $SYSPASS | sudo -S chmod 777 $outfile > /dev/null 2&>/dev/null
+    #if [ -e $outfile ]; then . "$outfile"; return; 
+    #else echo "creating $outfile "
+    #0fi
+    echo "${title// /_}" '() {' > "$outfile"
+    echo 'while true' > "$outfile"
+    echo 'do'         >> "$outfile"
+    echo  'let itemCnt=1' >> "$outfile"
+    echo 'clear' >> "$outfile"
+    echo 'cntrPrompt' "'$title'" >> "$outfile"
+    echo 'cntr ; echo -e ' '"${RED}${indexes[itemCnt]}: Exit";   ((itemCnt++))'  >> "$outfile"
+    for (( i=1; i <= $numItems/2; i=i+1 )); 
+       do
+           #echo $i
+           #echo 'cntr ; echo -e "${LTCYAN}${itemCnt}:"' "${arr[i]}"'; ((itemCnt++))' 
+           echo 'cntr ; echo -e "${LTCYAN}${indexes[itemCnt]}:"' "${arr[i]}"'; ((itemCnt++))' >> "$outfile"
+       done
+  # todo add an if statement to switch between mac and linux -sn1 and -sk1
+  #return
+  echo 'read -sk1' >> "$outfile"
+  echo 'let labelCnt=1' >> "$outfile"
+  echo 'let curDwn=$((itemCnt+1))' >> "$outfile"
+  echo 'case "$REPLY" in' >> "$outfile"
+  echo '${indexes[$((labelCnt++))]}) clear; return 0;;' >> "$outfile"
+    for (( i=1+$numItems/2; i <= $numItems; i=i+1 )); 
+       do
+           echo '${indexes[$((labelCnt++))]}) '"${arr[i]}"';;'  >> "$outfile"
+       done
+       echo ' *) curDwn=1 ;;' >> "$outfile"
+  echo 'esac' >> "$outfile"
+  echo 'moveCursorDown $curDwn ; cntr ; getKey $curDwn' >> "$outfile"
+  echo 'done' >> "$outfile"
+  #echo '}' >> $outfile
+  . "$outfile"
+  chmod 555 "$outfile"
+}

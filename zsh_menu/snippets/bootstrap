@@ -1,0 +1,28 @@
+#!/bin/zsh
+#-----------------------------------------------------------------------------------------------
+# clear circular load blocks
+#-----------------------------------------------------------------------------------------------
+clearLoadSemaphores () {
+  unset ZC_G
+  unset COLOR_G
+  unset MENUCFG_G
+  unset SHAREDVARS_G
+  unset GENERALFUNCTIONS_G
+  unset CURSOR_G
+  unset DIALOGS_G
+  unset MAINMENU_G
+  unset MENU2FN_G
+  unset MENU2_G
+}
+#-----------------------------------------------------------------------------------------------
+# load support files
+#-----------------------------------------------------------------------------------------------
+loadSupportFiles () {
+. "$MENU_HOME/snippets/color"              # colors for background and cursor
+. "$MENU_HOME/snippets/cursor"             # cursor positioning 
+. "$MENU_HOME/shconfig/menucfg"            # properties, user variables
+. "$MENU_HOME/snippets/generalFunctions"   # misc, menu builder etc.
+. "$MENU_HOME/menu2functions"              # functions for menu 2
+. "$MENU_HOME/menu2"                       # menu2 definition
+. "$MENU_HOME/mainmenu"                    # functions for main menu
+}

@@ -1,0 +1,8 @@
+#!/bin/zsh
+#echo loading menucfg
+[ ! ${MENUCFG_G} ] && MENUCFG_G='MENUCFG' || return 0 # { echo 'menucfg has already been loaded, unset MENUCFG_G, skipping'; return 0 }
+
+. "$MENU_HOME/shconfig/envDiscovery"
+. "$MENU_HOME/snippets/dialogs"
+
+

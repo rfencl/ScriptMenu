@@ -1,0 +1,15 @@
+#!/bin/zsh
+[ ! ${MENU2_G} ] &&  MENU2_G='MENU2' ||  return 0
+export MENU_HOME=/Users/rickfencl/Documents/ScriptMenu/zsh_menu
+. $MENU_HOME/snippets/bootstrap
+
+#######
+# Start of Script
+menu2 () {
+  menuItems=('menu2fn1' 'menu2fn2')
+  myfunctions=('(menu2fn1);curDwn=1' '(menu2fn2);curDwn=1' )
+  genMenu "Menu2 ($scriptVersion)" "${menuItems[@]}" "${myfunctions[@]}"
+}
+#####################
+# Launch
+cd $HOME

@@ -1,0 +1,59 @@
+#!/bin/zsh
+[ ! ${ENVDISCOVERY_G} ] && ENVDISCOVERY_G='ENVDISCOVERY' || return 0 # { echo envDiscovery has already been loaded, unset ENVDISCOVERY_G, skipping ... ; return 0 }
+
+#echo loading envDiscovery
+#------------------------------------------------------------------------------------------
+# Set to a valid directory to avoid any error.
+[[ -e "/var/log/tomcat8/" ]] && TOMCAT_LOG_DIR="/var/log/tomcat8/" || TOMCAT_LOG_DIR=""
+
+
+#----------------------------------------------
+# returns the current machines IP 
+#----------------------------------------------
+getIP () {
+    ip address | grep 'inet 10' | cut -c 10-17
+}
+
+#----------------------------------------------
+# returns the name of the OS
+# usage: [ $(getOS) == "CentOS" ] && echo yes || echo no
+#----------------------------------------------
+getOS () {
+  hostnamectl | grep Operating | cut -c 21-26
+}
+
+#----------------------------------------------
+# returns true if this is the viewing computer
+#----------------------------------------------
+isViewingComputer () {
+    [ ! isSSH ]
+    return $?
+}
+
+#----------------------------------------------
+# returns true (0) if this is an ssh session
+# example usage: isSSH && echo yes || echo no
+#---------------------------------------------
+isSSH () {
+    SESSION_TYPE=console
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    SESSION_TYPE=remote/ssh
+    else
+    case $(ps -o comm= -p $PPID) in
+        sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+    esac
+    fi
+
+    [ $SESSION_TYPE "==" "remote/ssh" ]
+    return $?
+}
+
+#----------------------------------------------
+# Returns true if there are more than 4 log files
+# in the tomcat log directory. 
+#---------------------------------------------
+isSimulated () {
+    [ $(ls ${TOMCAT_LOG_DIR}*.log | grep -c '.log') -gt 4 ]
+    return $?
+}
+

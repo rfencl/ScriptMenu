@@ -1,0 +1,47 @@
+#!/bin/zsh
+# echo loading cursor
+
+[ ! ${CURSOR_G} ] && CURSOR_G='CURSOR' || return 0  # { echo cursor has already been loaded, unset CURSOR_G, skipping ... ; return 0 }
+
+moveCursorTo () {
+    local line="$1"
+    local col="$2"
+
+    echo -e "\e[${line};${col}H"
+}
+
+moveCursorUp () {
+    local lines="$1"
+    echo -e "\e[${lines}A"
+}
+
+moveCursorDown () {
+    local lines="$1"
+    echo -e "\e[${lines}B"
+}
+
+moveCursorForward () {
+    local chars="$1"
+    echo -e "\e[${chars}C"
+}
+
+moveCursorBackward () {
+    local chars="$1"
+    echo -e "\e[${chars}D"
+}
+
+moveCursorHome () {
+    echo -e "\e[2J"
+}
+
+clearToEOL () {
+    echo -e "\e[K"
+}
+
+storeCursor () {
+    echo -e "\e[s"
+}
+
+recallCursor () {
+    echo -e "\e[u"
+}

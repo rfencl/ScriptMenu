@@ -1,0 +1,43 @@
+#!/bin/zsh
+[ ! ${MAINMENU_G} ] &&  MAINMENU_G='MAINMENU' ||  return 0
+
+
+fn5() {
+    echo "Output appears on the far left of the screen."
+}
+
+
+fn6() {
+    cntr;echo "Output appears inline with the menu."
+}
+
+
+fn7() {
+    clear
+    cntr;echo "Output appears inline with the menu, but the screen was cleared first."
+}
+
+
+fn8() {
+    echo "fn8"
+}
+
+
+fn9() {
+    echo "fn9"
+}
+
+
+fn10() {
+    echo "fn10"
+}
+
+
+fn11() {
+    echo "fn11"
+}
+
+
+fn12() {
+    echo "fn12"
+}

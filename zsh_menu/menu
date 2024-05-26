@@ -1,0 +1,51 @@
+#!/bin/zsh
+export MENU_HOME=/Users/rickfencl/Documents/ScriptMenu/zsh_menu
+. $MENU_HOME/snippets/bootstrap
+
+#-----------------------------------------------------------------------------------------------
+# Install the app with the system package manager
+#-----------------------------------------------------------------------------------------------
+installApp () {
+  local appMgr="$1"
+  local app="$2"
+  if ! command -v "$app" &> /dev/null
+  then
+    echo installing $app please wait.....
+    sudo $appMgr install $app -y &> /dev/null
+  fi
+}
+
+#-----------------------------------------------------------------------------------------------
+# Initialize the app by loading all the supporting files.
+# Install any missing packages
+#   dialog for all machines and zenity for the viewing machine.
+#-----------------------------------------------------------------------------------------------
+function init () {
+    echo in init
+    clearLoadSemaphores
+    loadSupportFiles
+}
+
+#######
+# Start of Script
+main () {
+  echo in main
+  menuItems=('Launch Midnight Commander' 'Launch HTOP' 'Launch Archive Manager' 'Launch meld' 'fn5'          'fn6'          'fn7'          'fn8'          'fn9'          'fn10'          'fn11'          'fn12'           'Submenu2')
+  myfunctions=('mc'                        'htop'        'file-roller '           'meld'        'fn5;curDwn=1' 'fn6;curDwn=1' 'fn7;curDwn=1' 'fn8;curDwn=1' 'fn9;curDwn=1' 'fn10;curDwn=1' 'fn11;curDwn=1' 'fn12;curDwn=1'  'menu2' )
+  genMenu "Main Menu ($scriptVersion)" "${menuItems[@]}" "${myfunctions[@]}"
+}
+#####################
+# Launch
+cd $HOME
+
+(return 0 2>/dev/null) && sourced=0 || sourced=1  # Is this file being sourced or run directly.
+
+if [ $sourced -ne 0 ]; then
+  echo sourced
+  init
+  
+else
+echo not sourced
+  init
+  main
+fi

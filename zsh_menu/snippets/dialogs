@@ -1,0 +1,39 @@
+#!/bin/zsh
+# echo loading dialogs
+[ ! ${DIALOGS_G} ] && DIALOGS_G=DILOGS || return 0 # { echo dialogs has already been loaded, unset DIALOGS_G, skipping ... ;return 0 }
+
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+showInfoDialog () {
+      local text="$1"
+  local title="$2"
+  title=${title:="Information"}
+     sleep .1 && wmctrl -a Information -b add,above & 
+     zenity --info --title "$title" --text "$text" --no-wrap --ok-label "Yes"  2>/dev/null &
+
+}
+#-----------------------------------------------------------------------------------------------
+#  Display a yes/no dialog and get the user's response
+#-----------------------------------------------------------------------------------------------
+showYesNoDialog () {
+  local text="$1"
+  local title="$2"
+  title=${title:="Question"}
+  if isSSH; then
+    if dialog --title "$2" --yesno "$text" 15 40 
+    then 
+      return 0
+    else
+      return 1
+    fi
+  else
+    if zenity --question --title "$title" --text "$text" --no-wrap --ok-label "Yes" --cancel-label "No" 2>/dev/null 
+    then
+     return 0
+    else
+     return 1
+    fi
+  fi
+
+}

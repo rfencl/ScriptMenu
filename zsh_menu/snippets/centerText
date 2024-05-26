@@ -1,0 +1,21 @@
+COLS=$(tput cols)
+
+cntrPrompt () {
+if [ -z "$SSH_CLIENT" ]  
+then
+  local prompt="$1"      
+  clear
+  centerOn=$prompt  # global
+  [[ $# -ne 0 ]] && printf "\n%*s" $[$COLS/2-${#centerOn}] ; echo -e "${BOLD}$1"
+  printf "%*s" $[$COLS/2-${#centerOn}] ; #echo -e "${BOLD}${prompt}"
+fi
+}
+
+cntr () {
+if [ -z "$SSH_CLIENT" ]  
+then
+  printf "%*s" $[$COLS/2-${#centerOn}] 
+fi
+}
+
+
