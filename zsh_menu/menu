@@ -1,5 +1,4 @@
 #!/bin/zsh
-export MENU_HOME=/Users/rickfencl/Documents/ScriptMenu/zsh_menu
 . $MENU_HOME/snippets/bootstrap
 
 #-----------------------------------------------------------------------------------------------
